@@ -6,9 +6,12 @@ import { NEXT_PUBLIC_URL } from './config';
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      //action: 'link',
       label: 'Link to Cat',
       target: `${NEXT_PUBLIC_URL}/api/cat`,
+    },
+    {
+      label: 'Link to mfer',
+      target: `${NEXT_PUBLIC_URL}/api/mfer`,
     },
   ],
   image: {
