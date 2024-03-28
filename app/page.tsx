@@ -5,6 +5,21 @@ import { NEXT_PUBLIC_URL } from './config';
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
+      action: 'link',
+      label: 'Link to Google',
+      target: 'https://www.google.com',
+    },
+  ],
+  image: {
+    src: `${NEXT_PUBLIC_URL}/park-3.png`,
+    aspectRatio: '1:1',
+  },
+});
+
+/*
+const frameMetadata = getFrameMetadata({
+  buttons: [
+    {
       label: 'Story time',
     },
     {
@@ -23,6 +38,7 @@ const frameMetadata = getFrameMetadata({
   },
   postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
 });
+*/
 
 export const metadata: Metadata = {
   title: 'zizzamia.xyz',
@@ -40,7 +56,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <h1>zizzamia.xyz</h1>
+      <h1>kraftinator</h1>
     </>
   );
 }
