@@ -11,6 +11,28 @@ import type { FrameTransactionResponse } from '@coinbase/onchainkit/frame';
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   const body: FrameRequest = await req.json();
 
+  let tokenId: bigint = 371n;
+
+  const data = encodeFunctionData({
+    abi: PickOnchainABI,
+    functionName: 'ViewPickByTokenID',
+    args: [tokenId],
+  });
+
+  const txData: FrameTransactionResponse = {
+    chainId: `eip155:${base.id}`,
+    method: 'eth_sendTransaction',
+    params: {
+      abi: [],
+      data,
+      to: PICK_ONCHAIN_CONTRACT_ADDR,
+      value: '0',
+      //value: parseEther('0.00004').toString(), // 0.00004 ETH
+    },
+  };
+  return NextResponse.json(txData);
+
+  /*
   return new NextResponse(
     getFrameHtmlResponse({
       buttons: [
@@ -32,6 +54,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       },
     }),
   );
+  */
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
