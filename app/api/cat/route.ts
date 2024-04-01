@@ -31,6 +31,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     },
   };
   console.log('Hello, world!')
+  console.log('txData', txData)
   return NextResponse.json(txData);
 
   /*
