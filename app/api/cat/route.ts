@@ -26,8 +26,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       abi: [],
       data,
       to: PICK_ONCHAIN_CONTRACT_ADDR,
-      value: '0',
-      //value: parseEther('0.00004').toString(), // 0.00004 ETH
+      //value: '0',
+      value: parseEther('0.00004').toString(), // 0.00004 ETH
     },
   };
   return NextResponse.json(txData);
