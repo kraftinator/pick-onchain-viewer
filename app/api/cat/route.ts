@@ -2,9 +2,14 @@ import { FrameRequest, getFrameMessage, getFrameHtmlResponse } from '@coinbase/o
 import { NextRequest, NextResponse } from 'next/server';
 import { NEXT_PUBLIC_URL } from '../../config';
 
+import { encodeFunctionData, parseEther } from 'viem';
+import { base } from 'viem/chains';
+import PickOnchainABI from '../../_contracts/PickOnchainABI';
+import { PICK_ONCHAIN_CONTRACT_ADDR } from '../../config';
+import type { FrameTransactionResponse } from '@coinbase/onchainkit/frame';
+
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   const body: FrameRequest = await req.json();
-  //const { isValid, message } = await getFrameMessage(body, { neynarApiKey: 'NEYNAR_ONCHAIN_KIT' });
 
   return new NextResponse(
     getFrameHtmlResponse({
