@@ -8,11 +8,28 @@ import PickOnchainABI from '../../_contracts/PickOnchainABI';
 import { PICK_ONCHAIN_CONTRACT_ADDR } from '../../config';
 import type { FrameTransactionResponse } from '@coinbase/onchainkit/frame';
 
+import { createPublicClient, http } from 'viem';
+
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   const body: FrameRequest = await req.json();
 
   let tokenId: bigint = 371n;
 
+  const publicClient = createPublicClient({
+    chain: base,
+    transport: http(),
+  });
+
+  const picks = await publicClient.readContract({
+    address: PICK_ONCHAIN_CONTRACT_ADDR,
+    abi: PickOnchainABI,
+    functionName: 'ViewPickByTokenID',
+    args: [tokenId],
+  })// as Player[];
+
+  return NextResponse.json(picks);
+
+  /*
   const data = encodeFunctionData({
     abi: PickOnchainABI,
     functionName: 'ViewPickByTokenID',
@@ -33,6 +50,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   console.log('Hello, world!')
   console.log('txData', txData)
   return NextResponse.json(txData);
+  */
 
   /*
   return new NextResponse(
