@@ -8,6 +8,7 @@ const frameMetadata = getFrameMetadata({
     {
       label: 'Link to Cat',
       target: `${NEXT_PUBLIC_URL}/api/cat`,
+      postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
     },
     {
       label: 'Link to mfer',
