@@ -7,7 +7,7 @@ const frameMetadata = getFrameMetadata({
     text: 'Enter Token ID',
   },
   image: {
-    src: `${NEXT_PUBLIC_URL}/spaghetti1.jpg`,
+    src: `${NEXT_PUBLIC_URL}/spaghetti.jpg`,
     aspectRatio: '1:1',    
   },
   buttons: [
