@@ -2,31 +2,42 @@ import { FrameRequest, getFrameMessage, getFrameHtmlResponse } from '@coinbase/o
 import { NextRequest, NextResponse } from 'next/server';
 import { NEXT_PUBLIC_URL } from '../../config';
 
+import { encodeFunctionData, parseEther } from 'viem';
+import { base } from 'viem/chains';
+import PickOnchainABI from '../../_contracts/PickOnchainABI';
+import { PICK_ONCHAIN_CONTRACT_ADDR } from '../../config';
+import type { FrameTransactionResponse } from '@coinbase/onchainkit/frame';
+
+import { createPublicClient, http } from 'viem';
+
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   const body: FrameRequest = await req.json();
-  //const { isValid, message } = await getFrameMessage(body, { neynarApiKey: 'NEYNAR_ONCHAIN_KIT' });
 
-  return new NextResponse(
-    getFrameHtmlResponse({
-      buttons: [
-        {
-          label: 'The Mfer Page',
-        },
-        {
-          action: 'link',
-          label: 'OnchainKit',
-          target: 'https://onchainkit.xyz',
-        },
-        {
-          action: 'post_redirect',
-          label: 'Dog pictures',
-        },
-      ],
-      image: {
-        src: `${NEXT_PUBLIC_URL}/mfer.png`,
-      },
-    }),
-  );
+  let tokenId1: bigint = 371n;
+  let tokenId2: bigint = 372n;
+  let tokens: bigint[] = [tokenId1, tokenId2];
+
+  const publicClient = createPublicClient({
+    chain: base,
+    transport: http(),
+  });
+
+  console.log('FLAG A');
+
+  const picks = await publicClient.readContract({
+    address: PICK_ONCHAIN_CONTRACT_ADDR,
+    abi: PickOnchainABI,
+    functionName: 'ViewPicksByTokenIDs',
+    args: [tokens],
+  })// as Player[];
+
+  console.log('FLAG B');
+  console.log('FLAG C');
+  console.log('publicClient', publicClient);
+  console.log('picks', picks);
+  console.log('FLAG D');
+
+  return NextResponse.json(picks);
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
