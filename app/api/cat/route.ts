@@ -65,22 +65,22 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <rect x="5" y="458" width="140" height="24" fill="lightgrey" stroke="black"/>
       <rect x="5" y="482" width="140" height="24" fill="lightgrey" stroke="black"/>
       <!-- Team Labels -->
-      <text x="10" y="57" font-family="Arial" font-size="16">Kansas</text>
-      <text x="10" y="81" font-family="Arial" font-size="16">Oregon</text>
-      <text x="10" y="117" font-family="Arial" font-size="16">Iowa</text>
-      <text x="10" y="141" font-family="Arial" font-size="16">Florida</text>
-      <text x="10" y="177" font-family="Arial" font-size="16">Gonzaga</text>
-      <text x="10" y="201" font-family="Arial" font-size="16">Pittsburgh</text>
-      <text x="10" y="237" font-family="Arial" font-size="16">Portland St</text>
-      <text x="10" y="261" font-family="Arial" font-size="16">UCLA</text>
-      <text x="10" y="297" font-family="Arial" font-size="16">Team9</text>
-      <text x="10" y="321" font-family="Arial" font-size="16">Team10</text>
-      <text x="10" y="357" font-family="Arial" font-size="16">Team11</text>
-      <text x="10" y="381" font-family="Arial" font-size="16">Team12</text>
-      <text x="10" y="417" font-family="Arial" font-size="16">Team13</text>
-      <text x="10" y="441" font-family="Arial" font-size="16">Team14</text>
-      <text x="10" y="477" font-family="Arial" font-size="16">Team15</text>
-      <text x="10" y="501" font-family="Arial" font-size="16">California</text>
+      <text x="10" y="57" font-family="Arial" font-size="16">Uconn</text>
+      <text x="10" y="81" font-family="Arial" font-size="16">Stetson</text>
+      <text x="10" y="117" font-family="Arial" font-size="16">Florida Atlantic</text>
+      <text x="10" y="141" font-family="Arial" font-size="16">Northwestern</text>
+      <text x="10" y="177" font-family="Arial" font-size="16">San Diego St</text>
+      <text x="10" y="201" font-family="Arial" font-size="16">UAB</text>
+      <text x="10" y="237" font-family="Arial" font-size="16">Auburn</text>
+      <text x="10" y="261" font-family="Arial" font-size="16">Yale</text>
+      <text x="10" y="297" font-family="Arial" font-size="16">BYU</text>
+      <text x="10" y="321" font-family="Arial" font-size="16">Duquesne</text>
+      <text x="10" y="357" font-family="Arial" font-size="16">Illinois</text>
+      <text x="10" y="381" font-family="Arial" font-size="16">Morehead St</text>
+      <text x="10" y="417" font-family="Arial" font-size="16">Washington St</text>
+      <text x="10" y="441" font-family="Arial" font-size="16">Drake</text>
+      <text x="10" y="477" font-family="Arial" font-size="16">Iowa St</text>
+      <text x="10" y="501" font-family="Arial" font-size="16">South Dagota St</text>
 
       <!-- ***** ROUND 2 ***** -->
       <!-- Rectangles -->
@@ -95,12 +95,12 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <!-- Team Labels -->
       <text x="215" y="86" font-family="Arial" font-size="16">${picks[0]}</text>
       <text x="215" y="110" font-family="Arial" font-size="16">${picks[1]}</text>
-      <text x="215" y="206" font-family="Arial" font-size="16">Gonzaga</text>
-      <text x="215" y="230" font-family="Arial" font-size="16">UCLA</text>
-      <text x="215" y="326" font-family="Arial" font-size="16">Oregon</text>
-      <text x="215" y="350" font-family="Arial" font-size="16">Iowa</text>
-      <text x="215" y="446" font-family="Arial" font-size="16">Gonzaga</text>
-      <text x="215" y="470" font-family="Arial" font-size="16">UCLA</text>
+      <text x="215" y="206" font-family="Arial" font-size="16">${picks[2]}</text>
+      <text x="215" y="230" font-family="Arial" font-size="16">${picks[3]}</text>
+      <text x="215" y="326" font-family="Arial" font-size="16">${picks[4]}</text>
+      <text x="215" y="350" font-family="Arial" font-size="16">${picks[5]}</text>
+      <text x="215" y="446" font-family="Arial" font-size="16">${picks[6]}</text>
+      <text x="215" y="470" font-family="Arial" font-size="16">${picks[7]}</text>
       <!-- Lines -->
       <path d="M 145,62 H 175 V 92 H 209" stroke="black" stroke-width="2" fill="none"/>
       <path d="M 145,122 H 175 V 92 H 209" stroke="black" stroke-width="2" fill="none"/>
@@ -118,10 +118,10 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <rect x="415" y="370" width="140" height="24" fill="lightgrey" stroke="black"/>
       <rect x="415" y="394" width="140" height="24" fill="lightgrey" stroke="black"/>
       <!-- Team Lables -->
-      <text x="420" y="148" font-family="Arial" font-size="16">Oregon</text>
-      <text x="420" y="172" font-family="Arial" font-size="16">UCLA</text>
-      <text x="420" y="388" font-family="Arial" font-size="16">Oregon</text>
-      <text x="420" y="412" font-family="Arial" font-size="16">UCLA</text>
+      <text x="420" y="148" font-family="Arial" font-size="16">${picks[32]}</text>
+      <text x="420" y="172" font-family="Arial" font-size="16">${picks[33]}</text>
+      <text x="420" y="388" font-family="Arial" font-size="16">${picks[34]}</text>
+      <text x="420" y="412" font-family="Arial" font-size="16">${picks[35]}</text>
       <!-- Lines -->
       <path d="M 350,92 H 380 V 154 H 415" stroke="black" stroke-width="2" fill="none"/>
       <path d="M 350,212 H 380 V 154 H 415" stroke="black" stroke-width="2" fill="none"/>
@@ -133,8 +133,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <rect x="630" y="248" width="140" height="24" fill="lightgrey" stroke="black"/>
       <rect x="630" y="272" width="140" height="24" fill="lightgrey" stroke="black"/>
       <!-- Team Labels -->
-      <text x="635" y="266" font-family="Arial" font-size="16">Oregon</text>
-      <text x="635" y="290" font-family="Arial" font-size="16">UCLA</text>
+      <text x="635" y="266" font-family="Arial" font-size="16">${picks[48]}</text>
+      <text x="635" y="290" font-family="Arial" font-size="16">${picks[49]}</text>
       <!-- Lines -->
       <path d="M 555,154 H 585 V 272 H 630" stroke="black" stroke-width="2" fill="none"/>
       <path d="M 555,394 H 585 V 272 H 630" stroke="black" stroke-width="2" fill="none"/>
