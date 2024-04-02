@@ -30,8 +30,10 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   })// as Player[];
 
   console.log('FLAG 2');
-  console.log('publicClient', publicClient)
-  console.log('picks', picks)
+  console.log('FLAG 3');
+  console.log('publicClient', publicClient);
+  console.log('picks', picks);
+  console.log('FLAG 4');
 
   return NextResponse.json(picks);
 
