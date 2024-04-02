@@ -141,8 +141,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         },
       ],
       image: {
-        //src: `${NEXT_PUBLIC_URL}/park-1.png`,
-        src: svgDataUrl,
+        src: `${NEXT_PUBLIC_URL}/park-1.png`,
+        //src: svgDataUrl,
       },
       postUrl: `${NEXT_PUBLIC_URL}/api/cat`,
     }),
