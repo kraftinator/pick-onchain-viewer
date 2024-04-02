@@ -16,12 +16,16 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     return new NextResponse('Message not valid', { status: 500 });
   }
 
-  const text = message.input || '';
+  //const text = message.input || '';
+  const inputTokenId = message.input || 1;
+  const tokenId: bigint = BigInt(inputTokenId);
 
-  console.log('text', text);
+
+  console.log('tokenId', tokenId);
 
   // Get picks
-  let tokenId: bigint = 371n;
+  //let tokenId: bigint = 371n;
+  
 
   const publicClient = createPublicClient({
     chain: base,
@@ -76,7 +80,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <text x="10" y="417" font-family="Arial" font-size="16">Team13</text>
       <text x="10" y="441" font-family="Arial" font-size="16">Team14</text>
       <text x="10" y="477" font-family="Arial" font-size="16">Team15</text>
-      <text x="10" y="501" font-family="Arial" font-size="16">${text}</text>
+      <text x="10" y="501" font-family="Arial" font-size="16">California</text>
 
       <!-- ***** ROUND 2 ***** -->
       <!-- Rectangles -->
@@ -170,7 +174,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     getFrameHtmlResponse({
       buttons: [
         {
-          label: `Token ID: ${text}`,
+          label: `Token ID: ${tokenId}`,
         },
         {
           action: 'link',
