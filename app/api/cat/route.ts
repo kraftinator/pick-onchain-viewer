@@ -137,7 +137,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
        <defs>
          <clipPath id="clip">
            <!-- Set the clipping rectangle to start at clipStartX and be 1024 units wide -->
-           <rect x="${clipStartX}" width="900" height="${originalHeightSize}" />
+           <rect x="${clipStartX}" width="800" height="${originalHeightSize}" />
          </clipPath>
        </defs>
        <g clip-path="url(#clip)">
