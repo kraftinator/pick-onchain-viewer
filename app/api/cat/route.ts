@@ -120,9 +120,10 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     </svg>
   `;
 
-  //const svgDataUrl: string = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(svgContent)))}`;
-  const svgDataUrl: string = `data:image/svg+xml;base64,${btoa(encodeURIComponent(svgContent))}`;
+  const svgDataUrl: string = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(svgContent)))}`;
+  //const svgDataUrl: string = `data:image/svg+xml;base64,${btoa(encodeURIComponent(svgContent))}`;
 
+  console.log('svgDataUrl', svgDataUrl);
 
   return new NextResponse(
     getFrameHtmlResponse({
