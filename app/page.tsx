@@ -2,7 +2,17 @@ import { getFrameMetadata } from '@coinbase/onchainkit/frame';
 import type { Metadata } from 'next';
 import { NEXT_PUBLIC_URL } from './config';
 
+const frameMetadata = getFrameMetadata({
+  input: {
+    text: 'Tell me a story',
+  },
+  image: {
+    src: `${NEXT_PUBLIC_URL}/spaghetti.jpg`,
+    aspectRatio: '1:1',
+  },
+});
 
+/*
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
@@ -21,7 +31,7 @@ const frameMetadata = getFrameMetadata({
   },
   postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
 });
-
+*/
 
 /*
 const frameMetadata = getFrameMetadata({
