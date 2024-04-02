@@ -82,6 +82,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
+  console.log('FLAG 3');
+  console.log('req', req);
   return getResponse(req);
 }
 
