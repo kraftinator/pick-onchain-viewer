@@ -129,8 +129,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   const originalWidthSize = 800;
   const newWidth = originalWidthSize * 1.91; 
   const centerX = newWidth / 2;
-  //const clipStartX = centerX - 400; // Start of the clip rectangle
-  const clipStartX = centerX - 300; // Start of the clip rectangle
+  const clipStartX = centerX - 400; // Start of the clip rectangle
 
   // Create the new SVG string and add a clipPath to clip the contents
   const framedSvgString = `
@@ -138,7 +137,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
        <defs>
          <clipPath id="clip">
            <!-- Set the clipping rectangle to start at clipStartX and be 1024 units wide -->
-           <rect x="${clipStartX}" width="800" height="${originalHeightSize}" />
+           <rect x="${clipStartX}" width="900" height="${originalHeightSize}" />
          </clipPath>
        </defs>
        <g clip-path="url(#clip)">
