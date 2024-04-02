@@ -130,7 +130,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   const newWidth = originalWidthSize * 1.91; 
   const centerX = newWidth / 2;
   //const clipStartX = centerX - 400; // Start of the clip rectangle
-  const clipStartX = centerX - 500; // Start of the clip rectangle
+  const clipStartX = centerX - 300; // Start of the clip rectangle
 
   // Create the new SVG string and add a clipPath to clip the contents
   const framedSvgString = `
