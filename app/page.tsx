@@ -15,6 +15,7 @@ const frameMetadata = getFrameMetadata({
       label: 'View Bracket',
       target: `${NEXT_PUBLIC_URL}/api/cat`,
     },
+  ]
 });
 
 /*
