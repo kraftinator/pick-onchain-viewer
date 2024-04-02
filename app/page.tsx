@@ -18,6 +18,7 @@ const frameMetadata = getFrameMetadata({
     src: `${NEXT_PUBLIC_URL}/spaghetti.jpg`,
     aspectRatio: '1:1',
   },
+  postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
 });
 
 
