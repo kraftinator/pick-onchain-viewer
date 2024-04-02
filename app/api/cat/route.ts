@@ -23,7 +23,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   console.log('text', text);
 
   const svgContent: string = `
-    <!-- <svg width="800" height="550" xmlns="http://www.w3.org/2000/svg"> -->
+    <svg viewBox='0 0 800 550' xmlns="http://www.w3.org/2000/svg">
       <!-- ********** EAST ********** -->
       <!-- ***** ROUND 1 ***** -->
       <!-- Rectangles -->
@@ -117,7 +117,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <!-- Lines -->
       <path d="M 555,154 H 585 V 272 H 630" stroke="black" stroke-width="2" fill="none"/>
       <path d="M 555,394 H 585 V 272 H 630" stroke="black" stroke-width="2" fill="none"/>
-    <!-- </svg> -->
+    </svg>
   `;
 
   //const svgDataUrl: string = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(svgContent)))}`;
@@ -128,7 +128,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   const originalSize = 800;
   const newWidth = originalSize * 1.91; // 1955.84
   const centerX = newWidth / 2;
-  const clipStartX = centerX - 600; // Start of the clip rectangle
+  const clipStartX = centerX - 400; // Start of the clip rectangle
 
   // Create the new SVG string and add a clipPath to clip the contents
   const framedSvgString = `
