@@ -1,13 +1,11 @@
 import { FrameRequest, getFrameMessage, getFrameHtmlResponse } from '@coinbase/onchainkit/frame';
 import { NextRequest, NextResponse } from 'next/server';
 import { NEXT_PUBLIC_URL } from '../../config';
-
 import { encodeFunctionData, parseEther } from 'viem';
 import { base } from 'viem/chains';
 import PickOnchainABI from '../../_contracts/PickOnchainABI';
 import { PICK_ONCHAIN_CONTRACT_ADDR } from '../../config';
 import type { FrameTransactionResponse } from '@coinbase/onchainkit/frame';
-
 import { createPublicClient, http } from 'viem';
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
@@ -21,6 +19,25 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   const text = message.input || '';
 
   console.log('text', text);
+
+  // Get picks
+  let tokenId: bigint = 371n;
+
+  const publicClient = createPublicClient({
+    chain: base,
+    transport: http(),
+  });
+
+
+  const picks = await publicClient.readContract({
+    address: PICK_ONCHAIN_CONTRACT_ADDR,
+    abi: PickOnchainABI,
+    functionName: 'ViewPickByTokenID',
+    args: [tokenId],
+  });
+
+  console.log('picks', picks);
+  // END Get Picks
 
   const svgContent: string = `
     <svg viewBox='0 0 800 550' xmlns="http://www.w3.org/2000/svg">
