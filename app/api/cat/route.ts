@@ -23,7 +23,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   console.log('text', text);
 
   const svgContent: string = `
-    <svg width="2400" height="1100" xmlns="http://www.w3.org/2000/svg">
+    <svg width="800" height="550" xmlns="http://www.w3.org/2000/svg">
       <!-- ********** EAST ********** -->
       <!-- ***** ROUND 1 ***** -->
       <!-- Rectangles -->
@@ -124,6 +124,29 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   //const svgDataUrl: string = `data:image/svg+xml;base64,${btoa(encodeURIComponent(svgContent))}`;
 
   console.log('svgDataUrl', svgDataUrl);
+
+/*
+  // Define the dimensions based on the 1.91:1 aspect ratio
+  const originalSize = 800;
+  const newWidth = originalSize * 1.91; // 1955.84
+  const centerX = newWidth / 2;
+  const clipStartX = centerX - 400; // Start of the clip rectangle
+
+  // Create the new SVG string and add a clipPath to clip the contents
+  const framedSvgString = `
+     <svg width="${newWidth}" height="${originalSize}" viewBox="0 0 ${newWidth} ${originalSize}" xmlns="http://www.w3.org/2000/svg">
+       <defs>
+         <clipPath id="clip">
+           <!-- Set the clipping rectangle to start at clipStartX and be 1024 units wide -->
+           <rect x="${clipStartX}" width="1024" height="${originalSize}" />
+         </clipPath>
+       </defs>
+       <g clip-path="url(#clip)">
+         ${svgContent}
+       </g>
+     </svg>
+   `;
+*/
 
   return new NextResponse(
     getFrameHtmlResponse({
