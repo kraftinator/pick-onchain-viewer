@@ -93,8 +93,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <rect x="210" y="428" width="140" height="24" fill="lightgrey" stroke="black"/>
       <rect x="210" y="452" width="140" height="24" fill="lightgrey" stroke="black"/>
       <!-- Team Labels -->
-      <text x="215" y="86" font-family="Arial" font-size="16">Oregon</text>
-      <text x="215" y="110" font-family="Arial" font-size="16">Iowa</text>
+      <text x="215" y="86" font-family="Arial" font-size="16">${picks[0]}</text>
+      <text x="215" y="110" font-family="Arial" font-size="16">${picks[1]}</text>
       <text x="215" y="206" font-family="Arial" font-size="16">Gonzaga</text>
       <text x="215" y="230" font-family="Arial" font-size="16">UCLA</text>
       <text x="215" y="326" font-family="Arial" font-size="16">Oregon</text>
