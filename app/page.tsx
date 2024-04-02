@@ -4,12 +4,17 @@ import { NEXT_PUBLIC_URL } from './config';
 
 const frameMetadata = getFrameMetadata({
   input: {
-    text: 'Tell me a story',
+    text: 'Enter Token ID',
   },
   image: {
     src: `${NEXT_PUBLIC_URL}/spaghetti.jpg`,
     aspectRatio: '1:1',
   },
+  buttons: [
+    {
+      label: 'View Bracket',
+      target: `${NEXT_PUBLIC_URL}/api/cat`,
+    },
 });
 
 /*
