@@ -23,7 +23,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   console.log('text', text);
 
   const svgContent: string = `
-    <svg width="800" height="550" xmlns="http://www.w3.org/2000/svg">
+    <!-- <svg width="800" height="550" xmlns="http://www.w3.org/2000/svg"> -->
       <!-- ********** EAST ********** -->
       <!-- ***** ROUND 1 ***** -->
       <!-- Rectangles -->
@@ -117,7 +117,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <!-- Lines -->
       <path d="M 555,154 H 585 V 272 H 630" stroke="black" stroke-width="2" fill="none"/>
       <path d="M 555,394 H 585 V 272 H 630" stroke="black" stroke-width="2" fill="none"/>
-    </svg>
+    <!-- </svg> -->
   `;
 
   //const svgDataUrl: string = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(svgContent)))}`;
