@@ -120,10 +120,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     </svg>
   `;
 
-  const svgDataUrl: string = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(svgContent)))}`;
-  //const svgDataUrl: string = `data:image/svg+xml;base64,${btoa(encodeURIComponent(svgContent))}`;
-
-  console.log('svgDataUrl', svgDataUrl);
+  //const svgDataUrl: string = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(svgContent)))}`;
+  //console.log('svgDataUrl', svgDataUrl);
 
 
   // Define the dimensions based on the 1.91:1 aspect ratio
@@ -147,6 +145,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
      </svg>
    `;
 
+   const svgDataUrl: string = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(framedSvgString)))}`;
+
 
   return new NextResponse(
     getFrameHtmlResponse({
@@ -166,8 +166,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       ],
       image: {
         //src: `${NEXT_PUBLIC_URL}/park-1.png`,
-        //src: svgDataUrl,
-        src: framedSvgString,
+        src: svgDataUrl,
+        //src: framedSvgString,
         //aspectRatio: '1.91:1',
       },
       postUrl: `${NEXT_PUBLIC_URL}/api/cat`,
