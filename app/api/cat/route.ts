@@ -125,18 +125,19 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
 
   // Define the dimensions based on the 1.91:1 aspect ratio
-  const originalSize = 800;
-  const newWidth = originalSize * 1.91; // 1955.84
+  const originalHeightSize = 550;
+  const originalWidthSize = 800;
+  const newWidth = originalWidthSize * 1.91; 
   const centerX = newWidth / 2;
   const clipStartX = centerX - 400; // Start of the clip rectangle
 
   // Create the new SVG string and add a clipPath to clip the contents
   const framedSvgString = `
-     <svg width="${newWidth}" height="${originalSize}" viewBox="0 0 ${newWidth} ${originalSize}" xmlns="http://www.w3.org/2000/svg">
+     <svg width="${newWidth}" height="${originalHeightSize}" viewBox="0 0 ${newWidth} ${originalHeightSize}" xmlns="http://www.w3.org/2000/svg">
        <defs>
          <clipPath id="clip">
            <!-- Set the clipping rectangle to start at clipStartX and be 1024 units wide -->
-           <rect x="${clipStartX}" width="1024" height="${originalSize}" />
+           <rect x="${clipStartX}" width="800" height="${originalHeightSize}" />
          </clipPath>
        </defs>
        <g clip-path="url(#clip)">
