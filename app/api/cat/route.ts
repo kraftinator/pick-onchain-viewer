@@ -59,7 +59,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <text x="10" y="417" font-family="Arial" font-size="16">Team13</text>
       <text x="10" y="441" font-family="Arial" font-size="16">Team14</text>
       <text x="10" y="477" font-family="Arial" font-size="16">Team15</text>
-      <text x="10" y="501" font-family="Arial" font-size="16">Team16</text>
+      <text x="10" y="501" font-family="Arial" font-size="16">${text}</text>
 
       <!-- ***** ROUND 2 ***** -->
       <!-- Rectangles -->
