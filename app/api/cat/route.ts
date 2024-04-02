@@ -20,12 +20,16 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     transport: http(),
   });
 
+  console.log('FLAG 1');
+
   const picks = await publicClient.readContract({
     address: PICK_ONCHAIN_CONTRACT_ADDR,
     abi: PickOnchainABI,
     functionName: 'ViewPickByTokenID',
     args: [tokenId],
   })// as Player[];
+
+  console.log('FLAG 2');
 
   return NextResponse.json(picks);
 
