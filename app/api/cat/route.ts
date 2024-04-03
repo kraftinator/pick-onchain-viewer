@@ -9,6 +9,12 @@ import type { FrameTransactionResponse } from '@coinbase/onchainkit/frame';
 import { createPublicClient, http } from 'viem';
 
 const hello = 'World';
+let getPicks = false;
+let currentPage = 'EAST';
+//let picks: string[];
+let picks: string[] = [];
+
+
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   const body: FrameRequest = await req.json();
@@ -18,6 +24,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     return new NextResponse('Message not valid', { status: 500 });
   }
 
+  
+
   //const text = message.input || '';
   const inputTokenId = message.input || 1;
   const tokenId: bigint = BigInt(inputTokenId);
@@ -25,27 +33,33 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   console.log('tokenId', tokenId);
   console.log('message?.button', message?.button);
-  console.log('message?.state.serialized', message?.state.serialized);
   console.log('hello', hello);
+
+
 
   // Get picks
   //let tokenId: bigint = 371n;
   
+  if (!getPicks) {
+    console.log('Loading picks from contract....')
+    const publicClient = createPublicClient({
+      chain: base,
+      transport: http(),
+    });
 
-  const publicClient = createPublicClient({
-    chain: base,
-    transport: http(),
-  });
+
+    const contractPicks = await publicClient.readContract({
+      address: PICK_ONCHAIN_CONTRACT_ADDR,
+      abi: PickOnchainABI,
+      functionName: 'ViewPickByTokenID',
+      args: [tokenId],
+    });
+
+    picks = contractPicks as string[];
 
 
-  const picks = await publicClient.readContract({
-    address: PICK_ONCHAIN_CONTRACT_ADDR,
-    abi: PickOnchainABI,
-    functionName: 'ViewPickByTokenID',
-    args: [tokenId],
-  });
-
-  console.log('picks', picks);
+    console.log('picks', picks);
+  }
   // END Get Picks
 
   const svgContent: string = `
