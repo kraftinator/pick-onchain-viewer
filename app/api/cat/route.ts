@@ -11,10 +11,8 @@ import { createPublicClient, http } from 'viem';
 const hello = 'World';
 let getPicks = false;
 let currentPage = 'EAST';
-//let picks: string[];
 let picks: string[] = [];
-
-
+let currentTokenId = 0;
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   const body: FrameRequest = await req.json();
@@ -28,8 +26,10 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   //const text = message.input || '';
   const inputTokenId = message.input || 1;
-  const tokenId: bigint = BigInt(inputTokenId);
-
+  let tokenId: bigint = BigInt(inputTokenId);
+  if (currentTokenId !== 0) {
+    tokenId = BigInt(currentTokenId);
+  }
 
   console.log('tokenId', tokenId);
   console.log('message?.button', message?.button);
