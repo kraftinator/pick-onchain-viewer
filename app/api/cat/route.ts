@@ -99,7 +99,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   }
   // END Get Picks
 
-  const svgContent: string = `
+  const svgContentEast: string = `
     <svg viewBox='0 0 800 550' xmlns="http://www.w3.org/2000/svg">
       <!-- ********** EAST ********** -->
       <!-- ***** ROUND 1 ***** -->
@@ -197,6 +197,101 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     </svg>
   `;
 
+  const svgContentWest: string = `
+    <svg viewBox='0 0 800 550' xmlns="http://www.w3.org/2000/svg">
+      <!-- ********** WEST ********** -->
+      <!-- ***** ROUND 1 ***** -->
+      <!-- Rectangles -->
+      <rect x="5" y="38" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="5" y="62" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="5" y="98" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="5" y="122" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="5" y="158" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="5" y="182" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="5" y="218" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="5" y="242" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="5" y="278" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="5" y="302" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="5" y="338" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="5" y="362" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="5" y="398" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="5" y="422" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="5" y="458" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="5" y="482" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <!-- Team Labels -->
+      <text x="10" y="57" font-family="Arial" font-size="16">Kansas</text>
+      <text x="10" y="81" font-family="Arial" font-size="16">Oregon</text>
+      <text x="10" y="117" font-family="Arial" font-size="16">Iowa</text>
+      <text x="10" y="141" font-family="Arial" font-size="16">Florida</text>
+      <text x="10" y="177" font-family="Arial" font-size="16">Gonzaga</text>
+      <text x="10" y="201" font-family="Arial" font-size="16">Pittsburgh</text>
+      <text x="10" y="237" font-family="Arial" font-size="16">Portland St</text>
+      <text x="10" y="261" font-family="Arial" font-size="16">UCLA</text>
+      <text x="10" y="297" font-family="Arial" font-size="16">Team9</text>
+      <text x="10" y="321" font-family="Arial" font-size="16">Team10</text>
+      <text x="10" y="357" font-family="Arial" font-size="16">Team11</text>
+      <text x="10" y="381" font-family="Arial" font-size="16">Team12</text>
+      <text x="10" y="417" font-family="Arial" font-size="16">Team13</text>
+      <text x="10" y="441" font-family="Arial" font-size="16">Team14</text>
+      <text x="10" y="477" font-family="Arial" font-size="16">Team15</text>
+      <text x="10" y="501" font-family="Arial" font-size="16">Team16</text>
+      <!-- ***** ROUND 2 ***** -->
+      <!-- Rectangles -->
+      <rect x="210" y="68" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="210" y="92" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="210" y="188" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="210" y="212" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="210" y="308" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="210" y="332" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="210" y="428" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="210" y="452" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <!-- Team Labels -->
+      <text x="215" y="86" font-family="Arial" font-size="16">Oregon</text>
+      <text x="215" y="110" font-family="Arial" font-size="16">Iowa</text>
+      <text x="215" y="206" font-family="Arial" font-size="16">Gonzaga</text>
+      <text x="215" y="230" font-family="Arial" font-size="16">UCLA</text>
+      <text x="215" y="326" font-family="Arial" font-size="16">Oregon</text>
+      <text x="215" y="350" font-family="Arial" font-size="16">Iowa</text>
+      <text x="215" y="446" font-family="Arial" font-size="16">Gonzaga</text>
+      <text x="215" y="470" font-family="Arial" font-size="16">UCLA</text>
+      <!-- Lines -->
+      <path d="M 145,62 H 175 V 92 H 209" stroke="black" stroke-width="2" fill="none"/>
+      <path d="M 145,122 H 175 V 92 H 209" stroke="black" stroke-width="2" fill="none"/>
+      <path d="M 145,182 H 175 V 212 H 209" stroke="black" stroke-width="2" fill="none"/>
+      <path d="M 145,242 H 175 V 212 H 209" stroke="black" stroke-width="2" fill="none"/>
+      <path d="M 145,302 H 175 V 332 H 209" stroke="black" stroke-width="2" fill="none"/>
+      <path d="M 145,362 H 175 V 332 H 209" stroke="black" stroke-width="2" fill="none"/>
+      <path d="M 145,422 H 175 V 452 H 209" stroke="black" stroke-width="2" fill="none"/>
+      <path d="M 145,482 H 175 V 452 H 209" stroke="black" stroke-width="2" fill="none"/>
+      <!-- ***** ROUND 3 ***** -->
+      <!-- Rectangles -->
+      <rect x="415" y="130" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="415" y="154" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="415" y="370" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="415" y="394" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <!-- Team Labels -->
+      <text x="420" y="148" font-family="Arial" font-size="16">Oregon</text>
+      <text x="420" y="172" font-family="Arial" font-size="16">UCLA</text>
+      <text x="420" y="388" font-family="Arial" font-size="16">Oregon</text>
+      <text x="420" y="412" font-family="Arial" font-size="16">UCLA</text>
+      <!-- Lines -->
+      <path d="M 350,92 H 380 V 154 H 415" stroke="black" stroke-width="2" fill="none"/>
+      <path d="M 350,212 H 380 V 154 H 415" stroke="black" stroke-width="2" fill="none"/>
+      <path d="M 350,332 H 380 V 394 H 415" stroke="black" stroke-width="2" fill="none"/>
+      <path d="M 350,452 H 380 V 394 H 415" stroke="black" stroke-width="2" fill="none"/>
+      <!-- ***** ROUND 4 ***** -->
+      <!-- Rectangles -->
+      <rect x="630" y="248" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="630" y="272" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <!-- Team Labels -->
+      <text x="635" y="266" font-family="Arial" font-size="16">Oregon</text>
+      <text x="635" y="290" font-family="Arial" font-size="16">UCLA</text>
+      <!-- Lines -->
+      <path d="M 555,154 H 585 V 272 H 630" stroke="black" stroke-width="2" fill="none"/>
+      <path d="M 555,394 H 585 V 272 H 630" stroke="black" stroke-width="2" fill="none"/>
+  </svg>
+  `
+
   //const svgDataUrl: string = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(svgContent)))}`;
   //console.log('svgDataUrl', svgDataUrl);
 
@@ -207,6 +302,13 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   const newWidth = originalWidthSize * 1.91; 
   const centerX = newWidth / 2;
   const clipStartX = centerX - 400; // Start of the clip rectangle
+
+  let svgContent = '';
+  if (currentPage === 'EAST') { 
+    svgContent = svgContentEast;
+   } else if (currentPage === 'WEST') {
+    svgContent = svgContentWest;
+   }
 
   // Create the new SVG string and add a clipPath to clip the contents
   const framedSvgString = `
