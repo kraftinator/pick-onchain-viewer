@@ -297,9 +297,9 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   </svg>
   `
 
-  const svgContentNorth: string = `
+  const svgContentSouth: string = `
     <svg viewBox='0 0 800 550' xmlns="http://www.w3.org/2000/svg">
-      <!-- ********** NORTH ********** -->
+      <!-- ********** SOUTH ********** -->
 
       <!-- ***** ROUND 1 ***** -->
       <!-- Rectangles -->
@@ -412,8 +412,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     svgContent = svgContentEast;
    } else if (currentPage === 'WEST') {
     svgContent = svgContentWest;
-   } else if (currentPage === 'NORTH') {
-    svgContent = svgContentNorth;
+   } else if (currentPage === 'SOUTH') {
+    svgContent = svgContentSouth;
    }
 
   // Create the new SVG string and add a clipPath to clip the contents
