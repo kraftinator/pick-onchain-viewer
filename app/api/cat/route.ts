@@ -22,6 +22,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
 
   console.log('tokenId', tokenId);
+  console.log('message?.button', message?.button);
 
   // Get picks
   //let tokenId: bigint = 371n;
@@ -174,16 +175,19 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     getFrameHtmlResponse({
       buttons: [
         {
-          label: `Token ID: ${tokenId}`,
+          label: 'EAST',
         },
         {
-          action: 'link',
-          label: 'OnchainKit',
-          target: 'https://onchainkit.xyz',
+          //action: 'link',
+          label: 'WEST',
+          //target: 'https://onchainkit.xyz',
         },
         {
-          action: 'post_redirect',
-          label: 'Dog pictures',
+          //action: 'post_redirect',
+          label: 'SOUTH',
+        },
+        {
+          label: 'MIDWEST',
         },
       ],
       image: {
