@@ -102,6 +102,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   const svgContentEast: string = `
     <svg viewBox='0 0 800 550' xmlns="http://www.w3.org/2000/svg">
       <!-- ********** EAST ********** -->
+
       <!-- ***** ROUND 1 ***** -->
       <!-- Rectangles -->
       <rect x="5" y="38" width="140" height="24" fill="lightgrey" stroke="black"/>
@@ -200,6 +201,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   const svgContentWest: string = `
     <svg viewBox='0 0 800 550' xmlns="http://www.w3.org/2000/svg">
       <!-- ********** WEST ********** -->
+
       <!-- ***** ROUND 1 ***** -->
       <!-- Rectangles -->
       <rect x="5" y="38" width="140" height="24" fill="lightgrey" stroke="black"/>
@@ -219,22 +221,23 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <rect x="5" y="458" width="140" height="24" fill="lightgrey" stroke="black"/>
       <rect x="5" y="482" width="140" height="24" fill="lightgrey" stroke="black"/>
       <!-- Team Labels -->
-      <text x="10" y="57" font-family="Arial" font-size="16">Kansas</text>
-      <text x="10" y="81" font-family="Arial" font-size="16">Oregon</text>
-      <text x="10" y="117" font-family="Arial" font-size="16">Iowa</text>
-      <text x="10" y="141" font-family="Arial" font-size="16">Florida</text>
-      <text x="10" y="177" font-family="Arial" font-size="16">Gonzaga</text>
-      <text x="10" y="201" font-family="Arial" font-size="16">Pittsburgh</text>
-      <text x="10" y="237" font-family="Arial" font-size="16">Portland St</text>
-      <text x="10" y="261" font-family="Arial" font-size="16">UCLA</text>
-      <text x="10" y="297" font-family="Arial" font-size="16">Team9</text>
-      <text x="10" y="321" font-family="Arial" font-size="16">Team10</text>
-      <text x="10" y="357" font-family="Arial" font-size="16">Team11</text>
-      <text x="10" y="381" font-family="Arial" font-size="16">Team12</text>
-      <text x="10" y="417" font-family="Arial" font-size="16">Team13</text>
-      <text x="10" y="441" font-family="Arial" font-size="16">Team14</text>
-      <text x="10" y="477" font-family="Arial" font-size="16">Team15</text>
-      <text x="10" y="501" font-family="Arial" font-size="16">Team16</text>
+      <text x="10" y="57" font-family="Arial" font-size="16">North Carolina</text>
+      <text x="10" y="81" font-family="Arial" font-size="16">Wagner</text>
+      <text x="10" y="117" font-family="Arial" font-size="16">Mississippi St</text>
+      <text x="10" y="141" font-family="Arial" font-size="16">Michigan St</text>
+      <text x="10" y="177" font-family="Arial" font-size="16">Saint Mary's</text>
+      <text x="10" y="201" font-family="Arial" font-size="16">Grand Canyon</text>
+      <text x="10" y="237" font-family="Arial" font-size="16">Alabama</text>
+      <text x="10" y="261" font-family="Arial" font-size="16">Charleston</text>
+      <text x="10" y="297" font-family="Arial" font-size="16">Clemson</text>
+      <text x="10" y="321" font-family="Arial" font-size="16">New Mexico</text>
+      <text x="10" y="357" font-family="Arial" font-size="16">Baylor</text>
+      <text x="10" y="381" font-family="Arial" font-size="16">Colgate</text>
+      <text x="10" y="417" font-family="Arial" font-size="16">Dayton</text>
+      <text x="10" y="441" font-family="Arial" font-size="16">Nevada</text>
+      <text x="10" y="477" font-family="Arial" font-size="16">Arizona</text>
+      <text x="10" y="501" font-family="Arial" font-size="16">Long Beach St</text>
+
       <!-- ***** ROUND 2 ***** -->
       <!-- Rectangles -->
       <rect x="210" y="68" width="140" height="24" fill="lightgrey" stroke="black"/>
@@ -246,14 +249,14 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <rect x="210" y="428" width="140" height="24" fill="lightgrey" stroke="black"/>
       <rect x="210" y="452" width="140" height="24" fill="lightgrey" stroke="black"/>
       <!-- Team Labels -->
-      <text x="215" y="86" font-family="Arial" font-size="16">Oregon</text>
-      <text x="215" y="110" font-family="Arial" font-size="16">Iowa</text>
-      <text x="215" y="206" font-family="Arial" font-size="16">Gonzaga</text>
-      <text x="215" y="230" font-family="Arial" font-size="16">UCLA</text>
-      <text x="215" y="326" font-family="Arial" font-size="16">Oregon</text>
-      <text x="215" y="350" font-family="Arial" font-size="16">Iowa</text>
-      <text x="215" y="446" font-family="Arial" font-size="16">Gonzaga</text>
-      <text x="215" y="470" font-family="Arial" font-size="16">UCLA</text>
+      <text x="215" y="86" font-family="Arial" font-size="16">${picks[8]}</text>
+      <text x="215" y="110" font-family="Arial" font-size="16">${picks[9]}</text>
+      <text x="215" y="206" font-family="Arial" font-size="16">${picks[10]}</text>
+      <text x="215" y="230" font-family="Arial" font-size="16">${picks[11]}</text>
+      <text x="215" y="326" font-family="Arial" font-size="16">${picks[12]}</text>
+      <text x="215" y="350" font-family="Arial" font-size="16">${picks[13]}</text>
+      <text x="215" y="446" font-family="Arial" font-size="16">${picks[14]}</text>
+      <text x="215" y="470" font-family="Arial" font-size="16">${picks[15]}</text>
       <!-- Lines -->
       <path d="M 145,62 H 175 V 92 H 209" stroke="black" stroke-width="2" fill="none"/>
       <path d="M 145,122 H 175 V 92 H 209" stroke="black" stroke-width="2" fill="none"/>
@@ -263,6 +266,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <path d="M 145,362 H 175 V 332 H 209" stroke="black" stroke-width="2" fill="none"/>
       <path d="M 145,422 H 175 V 452 H 209" stroke="black" stroke-width="2" fill="none"/>
       <path d="M 145,482 H 175 V 452 H 209" stroke="black" stroke-width="2" fill="none"/>
+
       <!-- ***** ROUND 3 ***** -->
       <!-- Rectangles -->
       <rect x="415" y="130" width="140" height="24" fill="lightgrey" stroke="black"/>
@@ -270,22 +274,23 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <rect x="415" y="370" width="140" height="24" fill="lightgrey" stroke="black"/>
       <rect x="415" y="394" width="140" height="24" fill="lightgrey" stroke="black"/>
       <!-- Team Labels -->
-      <text x="420" y="148" font-family="Arial" font-size="16">Oregon</text>
-      <text x="420" y="172" font-family="Arial" font-size="16">UCLA</text>
-      <text x="420" y="388" font-family="Arial" font-size="16">Oregon</text>
-      <text x="420" y="412" font-family="Arial" font-size="16">UCLA</text>
+      <text x="420" y="148" font-family="Arial" font-size="16">${picks[36]}</text>
+      <text x="420" y="172" font-family="Arial" font-size="16">${picks[37]}</text>
+      <text x="420" y="388" font-family="Arial" font-size="16">${picks[38]}</text>
+      <text x="420" y="412" font-family="Arial" font-size="16">${picks[39]}</text>
       <!-- Lines -->
       <path d="M 350,92 H 380 V 154 H 415" stroke="black" stroke-width="2" fill="none"/>
       <path d="M 350,212 H 380 V 154 H 415" stroke="black" stroke-width="2" fill="none"/>
       <path d="M 350,332 H 380 V 394 H 415" stroke="black" stroke-width="2" fill="none"/>
       <path d="M 350,452 H 380 V 394 H 415" stroke="black" stroke-width="2" fill="none"/>
+
       <!-- ***** ROUND 4 ***** -->
       <!-- Rectangles -->
       <rect x="630" y="248" width="140" height="24" fill="lightgrey" stroke="black"/>
       <rect x="630" y="272" width="140" height="24" fill="lightgrey" stroke="black"/>
       <!-- Team Labels -->
-      <text x="635" y="266" font-family="Arial" font-size="16">Oregon</text>
-      <text x="635" y="290" font-family="Arial" font-size="16">UCLA</text>
+      <text x="635" y="266" font-family="Arial" font-size="16">${picks[50]}</text>
+      <text x="635" y="290" font-family="Arial" font-size="16">${picks[51]}</text>
       <!-- Lines -->
       <path d="M 555,154 H 585 V 272 H 630" stroke="black" stroke-width="2" fill="none"/>
       <path d="M 555,394 H 585 V 272 H 630" stroke="black" stroke-width="2" fill="none"/>
