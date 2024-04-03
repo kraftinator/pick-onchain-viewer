@@ -8,7 +8,6 @@ import { PICK_ONCHAIN_CONTRACT_ADDR } from '../../config';
 import type { FrameTransactionResponse } from '@coinbase/onchainkit/frame';
 import { createPublicClient, http } from 'viem';
 
-const hello = 'World';
 let getPicks = false;
 let currentPage = 'EAST';
 let picks: string[] = [];
@@ -22,7 +21,47 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     return new NextResponse('Message not valid', { status: 500 });
   }
 
+  //if (currentPage === 'EAST' && currentTokenId !== BigInt(0)) {
+  //}
   
+  /*
+  if (currentTokenId !== BigInt(0)) {
+    if (message?.button === 1) {
+      currentPage = 'EAST';
+    } else if (message?.button === 2) {
+      currentPage = 'WEST';
+    } else if (message?.button === 3) {
+      currentPage = 'SOUTH';
+    } else if (message?.button === 4) {
+      currentPage = 
+    }
+    }
+  }
+*/
+
+  if (currentTokenId !== BigInt(0)) {
+    if (currentPage === 'EAST' && message?.button === 1) {
+      currentPage = 'FINAL_FOUR';
+    } else if (currentPage === 'EAST' && message?.button === 2) {
+      currentPage = 'WEST';
+    } else if (currentPage === 'WEST' && message?.button === 1) {
+      currentPage = 'EAST';
+    } else if (currentPage === 'WEST' && message?.button === 2) {
+      currentPage = 'SOUTH';
+    } else if (currentPage === 'SOUTH' && message?.button === 1) {
+      currentPage = 'WEST';
+    } else if (currentPage === 'SOUTH' && message?.button === 2) {
+      currentPage = 'MIDWEST';
+    } else if (currentPage === 'MIDWEST' && message?.button === 1) {
+      currentPage = 'SOUTH';
+    } else if (currentPage === 'MIDWEST' && message?.button === 2) {
+      currentPage = 'FINAL_FOUR';
+    } else if (currentPage === 'FINAL_FOUR' && message?.button === 1) {
+      currentPage = 'MIDWEST';
+    } else if (currentPage === 'FINAL_FOUR' && message?.button === 2) {
+      currentPage = 'EAST';
+    }
+  }
 
   //const text = message.input || '';
   const inputTokenId = message.input || 1;
@@ -35,13 +74,10 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   console.log('tokenId', tokenId);
   console.log('message?.button', message?.button);
-  console.log('hello', hello);
-
-
+  console.log('currentPage', currentPage);
 
   // Get picks
   //let tokenId: bigint = 371n;
-  
   if (!getPicks) {
     console.log('Loading picks from contract....')
     const publicClient = createPublicClient({
@@ -58,8 +94,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     });
 
     picks = contractPicks as string[];
-
-
     console.log('picks', picks);
     getPicks = true;
   }
@@ -196,26 +230,14 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     getFrameHtmlResponse({
       buttons: [
         {
-          label: 'EAST',
+          label: '<<',
         },
         {
-          //action: 'link',
-          label: 'WEST',
-          //target: 'https://onchainkit.xyz',
-        },
-        {
-          //action: 'post_redirect',
-          label: 'SOUTH',
-        },
-        {
-          label: 'MIDWEST',
+          label: '>>',
         },
       ],
       image: {
-        //src: `${NEXT_PUBLIC_URL}/park-1.png`,
         src: svgDataUrl,
-        //src: framedSvgString,
-        //aspectRatio: '1.91:1',
       },
       postUrl: `${NEXT_PUBLIC_URL}/api/cat`,
     }),
