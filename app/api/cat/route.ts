@@ -25,6 +25,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   console.log('tokenId', tokenId);
   console.log('message?.button', message?.button);
+  console.log('message?.state.serialized', message?.state.serialized);
   console.log('hello', hello);
 
   // Get picks
@@ -192,17 +193,10 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         {
           label: 'MIDWEST',
         },
-        {
-          label: 'FINAL FOUR',
-        },
-        {
-          label: 'BACK',
-        },
       ],
       image: {
         //src: `${NEXT_PUBLIC_URL}/park-1.png`,
         src: svgDataUrl,
-        aspectRatio: '1:1',
         //src: framedSvgString,
         //aspectRatio: '1.91:1',
       },
