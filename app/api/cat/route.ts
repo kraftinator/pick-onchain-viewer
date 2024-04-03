@@ -8,6 +8,8 @@ import { PICK_ONCHAIN_CONTRACT_ADDR } from '../../config';
 import type { FrameTransactionResponse } from '@coinbase/onchainkit/frame';
 import { createPublicClient, http } from 'viem';
 
+const hello = 'World';
+
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   const body: FrameRequest = await req.json();
   const { isValid, message } = await getFrameMessage(body, { neynarApiKey: 'NEYNAR_ONCHAIN_KIT' });
@@ -23,6 +25,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   console.log('tokenId', tokenId);
   console.log('message?.button', message?.button);
+  console.log('hello', hello);
 
   // Get picks
   //let tokenId: bigint = 371n;
@@ -188,6 +191,12 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         },
         {
           label: 'MIDWEST',
+        },
+        {
+          label: 'FINAL FOUR',
+        },
+        {
+          label: 'BACK',
         },
       ],
       image: {
