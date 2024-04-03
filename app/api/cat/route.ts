@@ -305,8 +305,10 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   let svgContent = '';
   if (currentPage === 'EAST') { 
+    console.log('FLAG 1');
     svgContent = svgContentEast;
    } else if (currentPage === 'WEST') {
+    console.log('FLAG 2');
     svgContent = svgContentWest;
    }
 
