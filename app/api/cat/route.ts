@@ -59,6 +59,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
 
     console.log('picks', picks);
+    getPicks = true;
   }
   // END Get Picks
 
