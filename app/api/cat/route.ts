@@ -12,7 +12,7 @@ const hello = 'World';
 let getPicks = false;
 let currentPage = 'EAST';
 let picks: string[] = [];
-let currentTokenId = 0;
+let currentTokenId = BigInt(0);
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   const body: FrameRequest = await req.json();
@@ -27,8 +27,10 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   //const text = message.input || '';
   const inputTokenId = message.input || 1;
   let tokenId: bigint = BigInt(inputTokenId);
-  if (currentTokenId !== 0) {
-    tokenId = BigInt(currentTokenId);
+  if (currentTokenId === BigInt(0)) {
+    currentTokenId = tokenId;
+  } else {
+    tokenId = currentTokenId;
   }
 
   console.log('tokenId', tokenId);
