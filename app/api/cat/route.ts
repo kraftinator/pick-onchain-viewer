@@ -557,21 +557,27 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   let svgContent = '';
   let previousPage = 'FINAL_FOUR';
+  let nextPage = 'WEST';
   if (currentPage === 'EAST') { 
     svgContent = svgContentEast;
-    previousPage = 'FINAL_FOUR';
+    previousPage = 'FINAL FOUR';
+    nextPage = 'WEST';
    } else if (currentPage === 'WEST') {
     svgContent = svgContentWest;
     previousPage = 'EAST';
+    nextPage = 'SOUTH';
    } else if (currentPage === 'SOUTH') {
     svgContent = svgContentSouth;
     previousPage = 'WEST';
+    nextPage = 'MIDWEST';
   } else if (currentPage === 'MIDWEST') {
     svgContent = svgContentMidwest;
     previousPage = 'SOUTH';
+    nextPage = 'FINAL FOUR';
   } else if (currentPage === 'FINAL_FOUR') {
     svgContent = svgContentFinalFour;
     previousPage = 'MIDWEST';
+    nextPage = 'EAST';
   }
 
   // Create the new SVG string and add a clipPath to clip the contents
@@ -596,10 +602,10 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     getFrameHtmlResponse({
       buttons: [
         {
-          label: `<< ${previousPage}`,
+          label: `<<  ${previousPage}`,
         },
         {
-          label: '>>',
+          label: `>>  ${nextPage}`,
         },
         {
           label: 'START OVER',
