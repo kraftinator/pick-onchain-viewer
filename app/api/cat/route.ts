@@ -544,11 +544,15 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         {
           label: '>>',
         },
+        {
+          label: 'START OVER',
+          target: `${NEXT_PUBLIC_URL}/api/cat`,
+        },
       ],
       image: {
         src: svgDataUrl,
       },
-      postUrl: `${NEXT_PUBLIC_URL}/api/cat`,
+      postUrl: `${NEXT_PUBLIC_URL}/page.tsx`,
     }),
   );
 }
