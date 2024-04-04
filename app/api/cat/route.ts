@@ -609,13 +609,13 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         },
         {
           label: 'START OVER',
-          target: `${NEXT_PUBLIC_URL}/`,
+          target: `${NEXT_PUBLIC_URL}`,
         },
       ],
       image: {
         src: svgDataUrl,
       },
-      postUrl: `${NEXT_PUBLIC_URL}/api/cat`,
+      //postUrl: `${NEXT_PUBLIC_URL}/api/cat`,
     }),
   );
 }
