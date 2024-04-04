@@ -22,6 +22,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   }
 
   console.log('message', message);
+  console.log('currentTokenId', currentTokenId);
+  console.log('message.input', message.input);
 
   //if (currentPage === 'EAST' && currentTokenId !== BigInt(0)) {
   //}
