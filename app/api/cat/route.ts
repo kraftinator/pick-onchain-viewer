@@ -487,8 +487,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <rect x="5" y="248" width="140" height="24" fill="lightgrey" stroke="black"/>
       <rect x="5" y="272" width="140" height="24" fill="lightgrey" stroke="black"/>
       <!-- Team Labels -->
-      <text x="10" y="266" font-family="Arial" font-size="16">${picks[53]}</text>
-      <text x="10" y="290" font-family="Arial" font-size="16">${picks[54]}</text>
+      <text x="10" y="266" font-family="Arial" font-size="16">${picks[54]}</text>
+      <text x="10" y="290" font-family="Arial" font-size="16">${picks[55]}</text>
       <!-- Lines -->
       <path d="M 220,154 H 190 V 272 H 145" stroke="black" stroke-width="2" fill="none"/>
       <path d="M 220,394 H 190 V 272 H 145" stroke="black" stroke-width="2" fill="none"/>
@@ -501,20 +501,20 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <rect x="5" y="38" width="140" height="24" fill="lightgrey" stroke="black"/>
       <rect x="5" y="62" width="140" height="24" fill="lightgrey" stroke="black"/>
       <!-- Team Labels -->
-      <text x="10" y="56" font-family="Arial" font-size="16">Oregon</text>
-      <text x="10" y="80" font-family="Arial" font-size="16">UCLA</text>
+      <text x="10" y="56" font-family="Arial" font-size="16">${picks[56]}</text>
+      <text x="10" y="80" font-family="Arial" font-size="16">${picks[57]}</text>
       <!-- Rectangles -->
       <rect x="5" y="434" width="140" height="24" fill="lightgrey" stroke="black"/>
       <rect x="5" y="458" width="140" height="24" fill="lightgrey" stroke="black"/>
       <!-- Team Labels -->
-      <text x="10" y="452" font-family="Arial" font-size="16">Oregon</text>
-      <text x="10" y="476" font-family="Arial" font-size="16">UCLA</text>
+      <text x="10" y="452" font-family="Arial" font-size="16">${picks[58]}</text>
+      <text x="10" y="476" font-family="Arial" font-size="16">${picks[59]}</text>
       <!-- Rectangles -->
       <rect x="220" y="230" width="140" height="24" fill="lightgrey" stroke="black"/>
       <rect x="220" y="254" width="140" height="24" fill="lightgrey" stroke="black"/>
       <!-- Team Labels -->
-      <text x="225" y="248" font-family="Arial" font-size="16">Oregon</text>
-      <text x="225" y="272" font-family="Arial" font-size="16">UCLA</text>
+      <text x="225" y="248" font-family="Arial" font-size="16">${picks[60]}</text>
+      <text x="225" y="272" font-family="Arial" font-size="16">${picks[61]}</text>
       <!-- Lines -->
       <path d="M 145,62 H 180 V 254 H 220" stroke="black" stroke-width="2" fill="none"/>
       <path d="M 145,458 H 180 V 254 H 220" stroke="black" stroke-width="2" fill="none"/>
@@ -522,7 +522,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <line x1="361" y1="254" x2="455" y2="254" stroke="black" stroke-width="2" />
       <!-- ********** WINNER ********** -->
       <rect x="435" y="242" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <text x="440" y="260" font-family="Arial" font-size="16">Oregon</text>
+      <text x="440" y="260" font-family="Arial" font-size="16">${picks[62]}</text>
     </svg>
   `
 
