@@ -496,7 +496,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   `
 
   const svgContentFinalFour = `
-    <svg viewBox='0 0 800 550' xmlns="http://www.w3.org/2000/svg">  <!-- ***** FINAL FOUR ***** -->
+    <svg viewBox='0 0 600 520' xmlns="http://www.w3.org/2000/svg">  <!-- ***** FINAL FOUR ***** -->
       <!-- Rectangles -->
       <rect x="5" y="38" width="140" height="24" fill="lightgrey" stroke="black"/>
       <rect x="5" y="62" width="140" height="24" fill="lightgrey" stroke="black"/>
@@ -531,11 +531,19 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
 
   // Define the dimensions based on the 1.91:1 aspect ratio
-  const originalHeightSize = 550;
-  const originalWidthSize = 800;
-  const newWidth = originalWidthSize * 1.91; 
-  const centerX = newWidth / 2;
-  const clipStartX = centerX - 400; // Start of the clip rectangle
+  let originalHeightSize = 550;
+  let originalWidthSize = 800;
+  let newWidth = originalWidthSize * 1.91; 
+  let centerX = newWidth / 2;
+  let clipStartX = centerX - 400; // Start of the clip rectangle
+
+  if (currentPage === 'FINAL_FOUR') {
+    let originalHeightSize = 520;
+    let originalWidthSize = 600;
+    let newWidth = originalWidthSize * 1.91; 
+    let centerX = newWidth / 2;
+    let clipStartX = centerX - 300; // Start of the clip rectangle
+  }
 
   let svgContent = '';
   if (currentPage === 'EAST') { 
