@@ -74,6 +74,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     // Initialize
     currentTokenId = tokenId;
     getPicks = false;
+    currentPage = 'EAST';
   }
 
   //const inputTokenId = message.input || 1;
