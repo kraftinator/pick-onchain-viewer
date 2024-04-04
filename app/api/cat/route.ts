@@ -609,7 +609,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         },
         {
           label: 'START OVER',
-          target: `${NEXT_PUBLIC_URL}/api/frame`,
+          target: `${NEXT_PUBLIC_URL}/api/test`,
         },
       ],
       image: {
