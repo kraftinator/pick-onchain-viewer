@@ -323,7 +323,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <text x="655" y="57" font-family="Arial" font-size="16">Houston</text>
       <text x="655" y="81" font-family="Arial" font-size="16">Longwood</text>
       <text x="655" y="117" font-family="Arial" font-size="16">Nebraska</text>
-      <text x="655" y="141" font-family="Arial" font-size="16">Texas A and M</text>
+      <text x="655" y="141" font-family="Arial" font-size="16">Texas A&amp;M</text>
       <text x="655" y="177" font-family="Arial" font-size="16">Wisonsin</text>
       <text x="655" y="201" font-family="Arial" font-size="16">James Madison</text>
       <text x="655" y="237" font-family="Arial" font-size="16">Duke</text>
