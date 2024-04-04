@@ -45,19 +45,25 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   //const inputTokenId = message.input || 1;
   const inputTokenId = message.input;
-  let tokenId: bigint = BigInt(inputTokenId);
+  let tokenId = BigInt(1);
 
-  if (typeof tokenId === 'undefined') {
+  if (typeof inputTokenId === 'undefined') {
     if (currentTokenId === BigInt(0)) {
       tokenId = BigInt(1);
     } else {
       tokenId = currentTokenId;
     }
+  } else {
+    tokenId = BigInt(inputTokenId);
   }
 
+  //let tokenId: bigint = BigInt(inputTokenId);
+
+
+
   // Set currentPage
-  //if (currentTokenId !== BigInt(0)) {
-  if (currentTokenId === tokenId) { 
+  if (currentTokenId !== BigInt(0)) {
+  //if (currentTokenId === tokenId) { 
     if (currentPage === 'EAST' && message?.button === 1) {
       currentPage = 'FINAL_FOUR';
     } else if (currentPage === 'EAST' && message?.button === 2) {
@@ -79,7 +85,9 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     } else if (currentPage === 'FINAL_FOUR' && message?.button === 2) {
       currentPage = 'EAST';
     }
-  } else {
+  }
+
+  if (currentTokenId !== tokenId) {
     // Initialize
     currentTokenId = tokenId;
     getPicks = false;
