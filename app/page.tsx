@@ -3,6 +3,20 @@ import type { Metadata } from 'next';
 import { NEXT_PUBLIC_URL } from './config';
 
 const frameMetadata = getFrameMetadata({
+  image: {
+    src: `${NEXT_PUBLIC_URL}/spaghetti.jpg`,
+    aspectRatio: '1:1',    
+  },
+  buttons: [
+    {
+      label: 'START',
+      target: `${NEXT_PUBLIC_URL}/api/main`,
+    },
+  ]
+});
+
+/*
+const frameMetadata = getFrameMetadata({
   input: {
     text: 'Enter Token ID',
   },
@@ -17,6 +31,7 @@ const frameMetadata = getFrameMetadata({
     },
   ]
 });
+*/
 
 /*
 const frameMetadata = getFrameMetadata({
