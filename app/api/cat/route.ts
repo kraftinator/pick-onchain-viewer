@@ -420,7 +420,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <rect x="650" y="482" width="140" height="24" fill="lightgrey" stroke="black"/>
       <!-- Team Labels -->
       <text x="655" y="57" font-family="Arial" font-size="16">Purdue</text>
-      <text x="655" y="81" font-family="Arial" font-size="16">Montana St/Grambling</text>
+      <text x="655" y="81" font-family="Arial" font-size="16">Grambling St</text>
       <text x="655" y="117" font-family="Arial" font-size="16">Utah St</text>
       <text x="655" y="141" font-family="Arial" font-size="16">TCU</text>
       <text x="655" y="177" font-family="Arial" font-size="16">Gonzaga</text>
@@ -432,7 +432,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <text x="655" y="357" font-family="Arial" font-size="16">Creighton</text>
       <text x="655" y="381" font-family="Arial" font-size="16">Akron</text>
       <text x="655" y="417" font-family="Arial" font-size="16">Texas</text>
-      <text x="655" y="441" font-family="Arial" font-size="16">Virginia/Colorado</text>
+      <text x="655" y="441" font-family="Arial" font-size="16">Colorado St</text>
       <text x="655" y="477" font-family="Arial" font-size="16">Tennessee</text>
       <text x="655" y="501" font-family="Arial" font-size="16">Saint Peter's</text>
 
@@ -495,6 +495,37 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     </svg>
   `
 
+  const svgContentFinalFour = `
+    <svg viewBox='0 0 800 550' xmlns="http://www.w3.org/2000/svg">  <!-- ***** FINAL FOUR ***** -->
+      <!-- Rectangles -->
+      <rect x="5" y="38" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="5" y="62" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <!-- Team Labels -->
+      <text x="10" y="56" font-family="Arial" font-size="16">Oregon</text>
+      <text x="10" y="80" font-family="Arial" font-size="16">UCLA</text>
+      <!-- Rectangles -->
+      <rect x="5" y="434" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="5" y="458" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <!-- Team Labels -->
+      <text x="10" y="452" font-family="Arial" font-size="16">Oregon</text>
+      <text x="10" y="476" font-family="Arial" font-size="16">UCLA</text>
+      <!-- Rectangles -->
+      <rect x="220" y="230" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="220" y="254" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <!-- Team Labels -->
+      <text x="225" y="248" font-family="Arial" font-size="16">Oregon</text>
+      <text x="225" y="272" font-family="Arial" font-size="16">UCLA</text>
+      <!-- Lines -->
+      <path d="M 145,62 H 180 V 254 H 220" stroke="black" stroke-width="2" fill="none"/>
+      <path d="M 145,458 H 180 V 254 H 220" stroke="black" stroke-width="2" fill="none"/>
+      <!-- Lines -->
+      <line x1="361" y1="254" x2="455" y2="254" stroke="black" stroke-width="2" />
+      <!-- ********** WINNER ********** -->
+      <rect x="435" y="242" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <text x="440" y="260" font-family="Arial" font-size="16">Oregon</text>
+    </svg>
+  `
+
   //const svgDataUrl: string = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(svgContent)))}`;
   //console.log('svgDataUrl', svgDataUrl);
 
@@ -515,7 +546,9 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     svgContent = svgContentSouth;
   } else if (currentPage === 'MIDWEST') {
     svgContent = svgContentMidwest;
-   }
+  } else if (currentPage === 'FINAL_FOUR') {
+    svgContent = svgContentFinalFour;
+  }
 
   // Create the new SVG string and add a clipPath to clip the contents
   const framedSvgString = `
