@@ -139,7 +139,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <text x="10" y="417" font-family="Arial" font-size="16">Washington St</text>
       <text x="10" y="441" font-family="Arial" font-size="16">Drake</text>
       <text x="10" y="477" font-family="Arial" font-size="16">Iowa St</text>
-      <text x="10" y="501" font-family="Arial" font-size="16">South Dagota St</text>
+      <text x="10" y="501" font-family="Arial" font-size="16">South Dakota St</text>
 
       <!-- ***** ROUND 2 ***** -->
       <!-- Rectangles -->
@@ -305,7 +305,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     <svg viewBox='0 0 800 550' xmlns="http://www.w3.org/2000/svg">
       <!-- ********** SOUTH ********** -->
       <!-- Title -->
-      <text x="50" y="66" font-family="Arial" font-size="46" fill="blue">SOUTH</text>
+      <text x="5" y="66" font-family="Arial" font-size="46" fill="blue">SOUTH</text>
 
       <!-- ***** ROUND 1 ***** -->
       <!-- Rectangles -->
@@ -406,7 +406,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     <svg viewBox='0 0 800 550' xmlns="http://www.w3.org/2000/svg">
       <!-- ********** MIDWEST ********** -->
       <!-- Title -->
-      <text x="50" y="66" font-family="Arial" font-size="46" fill="blue">MIDWEST</text>
+      <text x="5" y="66" font-family="Arial" font-size="46" fill="blue">MIDWEST</text>
 
       <!-- ***** ROUND 1 ***** -->  
       <!-- Rectangles -->
@@ -556,16 +556,22 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   }
 
   let svgContent = '';
+  let previousPage = 'FINAL_FOUR';
   if (currentPage === 'EAST') { 
     svgContent = svgContentEast;
+    previousPage = 'FINAL_FOUR';
    } else if (currentPage === 'WEST') {
     svgContent = svgContentWest;
+    previousPage = 'EAST';
    } else if (currentPage === 'SOUTH') {
     svgContent = svgContentSouth;
+    previousPage = 'WEST';
   } else if (currentPage === 'MIDWEST') {
     svgContent = svgContentMidwest;
+    previousPage = 'SOUTH';
   } else if (currentPage === 'FINAL_FOUR') {
     svgContent = svgContentFinalFour;
+    previousPage = 'MIDWEST';
   }
 
   // Create the new SVG string and add a clipPath to clip the contents
@@ -590,7 +596,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     getFrameHtmlResponse({
       buttons: [
         {
-          label: '<<',
+          label: `<< ${previousPage}`,
         },
         {
           label: '>>',
