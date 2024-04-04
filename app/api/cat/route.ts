@@ -102,6 +102,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   const svgContentEast: string = `
     <svg viewBox='0 0 800 550' xmlns="http://www.w3.org/2000/svg">
       <!-- ********** EAST ********** -->
+      <!-- Title -->
+      <text x="650" y="66" font-family="Arial" font-size="46" fill="blue">EAST</text>
 
       <!-- ***** ROUND 1 ***** -->
       <!-- Rectangles -->
@@ -201,6 +203,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   const svgContentWest: string = `
     <svg viewBox='0 0 800 550' xmlns="http://www.w3.org/2000/svg">
       <!-- ********** WEST ********** -->
+      <!-- Title -->
+      <text x="650" y="66" font-family="Arial" font-size="46" fill="blue">WEST</text>
 
       <!-- ***** ROUND 1 ***** -->
       <!-- Rectangles -->
@@ -497,6 +501,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   const svgContentFinalFour = `
     <svg viewBox='0 0 600 520' xmlns="http://www.w3.org/2000/svg">  <!-- ***** FINAL FOUR ***** -->
+      <!-- Title -->
+      <text x="250" y="66" font-family="Arial" font-size="46" fill="blue">FINAL FOUR</text>
       <!-- Rectangles -->
       <rect x="5" y="38" width="140" height="24" fill="lightgrey" stroke="black"/>
       <rect x="5" y="62" width="140" height="24" fill="lightgrey" stroke="black"/>
