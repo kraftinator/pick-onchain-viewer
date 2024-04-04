@@ -43,7 +43,12 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   }
 */
 
-  if (currentTokenId !== BigInt(0)) {
+  const inputTokenId = message.input || 1;
+  let tokenId: bigint = BigInt(inputTokenId);
+
+  // Set currentPage
+  //if (currentTokenId !== BigInt(0)) {
+  if (currentTokenId !== tokenId) { 
     if (currentPage === 'EAST' && message?.button === 1) {
       currentPage = 'FINAL_FOUR';
     } else if (currentPage === 'EAST' && message?.button === 2) {
@@ -65,16 +70,18 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     } else if (currentPage === 'FINAL_FOUR' && message?.button === 2) {
       currentPage = 'EAST';
     }
+    // Initialize
+    currentTokenId = tokenId;
+    getPicks = false;
   }
 
-  //const text = message.input || '';
-  const inputTokenId = message.input || 1;
-  let tokenId: bigint = BigInt(inputTokenId);
-  if (currentTokenId === BigInt(0)) {
-    currentTokenId = tokenId;
-  } else {
-    tokenId = currentTokenId;
-  }
+  //const inputTokenId = message.input || 1;
+  //let tokenId: bigint = BigInt(inputTokenId);
+  //if (currentTokenId === BigInt(0)) {
+  //  currentTokenId = tokenId;
+  //} else {
+  //  tokenId = currentTokenId;
+  //}
 
   console.log('tokenId', tokenId);
   console.log('message?.button', message?.button);
