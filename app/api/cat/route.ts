@@ -605,11 +605,11 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           label: `<<  ${previousPage}`,
         },
         {
-          label: `>>  ${nextPage}`,
+          label: `${nextPage}  >>`,
         },
         {
           label: 'START OVER',
-          target: `${NEXT_PUBLIC_URL}/page`,
+          target: `${NEXT_PUBLIC_URL}`,
         },
       ],
       image: {
