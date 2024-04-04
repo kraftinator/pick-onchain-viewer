@@ -609,7 +609,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         },
         {
           label: 'START OVER',
-          target: `${NEXT_PUBLIC_URL}/page.tsx`,
+          target: `${NEXT_PUBLIC_URL}/api/mfer`,
         },
       ],
       image: {
