@@ -48,7 +48,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   // Set currentPage
   //if (currentTokenId !== BigInt(0)) {
-  if (currentTokenId !== tokenId) { 
+  if (currentTokenId === tokenId) { 
     if (currentPage === 'EAST' && message?.button === 1) {
       currentPage = 'FINAL_FOUR';
     } else if (currentPage === 'EAST' && message?.button === 2) {
@@ -70,6 +70,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     } else if (currentPage === 'FINAL_FOUR' && message?.button === 2) {
       currentPage = 'EAST';
     }
+  } else {
     // Initialize
     currentTokenId = tokenId;
     getPicks = false;
