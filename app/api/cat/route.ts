@@ -43,11 +43,16 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   }
 */
 
-  const inputTokenId = message.input || 1;
+  //const inputTokenId = message.input || 1;
+  const inputTokenId = message.input;
   let tokenId: bigint = BigInt(inputTokenId);
 
   if (typeof tokenId === 'undefined') {
-    tokenId = currentTokenId;
+    if (currentTokenId === BigInt(0)) {
+      tokenId = BigInt(1);
+    } else {
+      tokenId = currentTokenId;
+    }
   }
 
   // Set currentPage
