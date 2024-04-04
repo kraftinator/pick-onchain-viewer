@@ -21,6 +21,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     return new NextResponse('Message not valid', { status: 500 });
   }
 
+  console.log('message', message);
+
   //if (currentPage === 'EAST' && currentTokenId !== BigInt(0)) {
   //}
   
