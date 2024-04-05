@@ -5,7 +5,7 @@ import { NEXT_PUBLIC_URL } from './config';
 const frameMetadata = getFrameMetadata({
 
   image: {
-    src: `${NEXT_PUBLIC_URL}/pick-onchain-main3.png`,
+    src: `${NEXT_PUBLIC_URL}/pick-onchain-main5.png`,
   },
   buttons: [
     {

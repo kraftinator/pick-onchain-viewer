@@ -6,7 +6,7 @@ Based on https://github.com/Zizzamia/a-frame-in-100-lines
 
 ## Authors
 
-- [@kraftinator](https://github.com/kraftinator.png) ([warpcast](https://warpcast.com/kraft))
+- [@kraftinator](https://github.com/kraftinator) ([warpcast](https://warpcast.com/kraft))
 
 ## License
 
