@@ -9,7 +9,7 @@ import type { FrameTransactionResponse } from '@coinbase/onchainkit/frame';
 import { createPublicClient, http } from 'viem';
 
 function isEliminated(pick: string): boolean {
-  console.log('isEliminated pick', pick);
+  //console.log('isEliminated pick', pick);
   // Final Four
   if (pick === winners[56] && winners[60] === '') { return false; }
   if (pick === winners[57] && winners[60] === '') { return false; }
@@ -715,9 +715,11 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       buttons: [
         {
           label: `<<  ${previousPage}`,
+          target: `${NEXT_PUBLIC_URL}/api/bracket`,
         },
         {
           label: `${nextPage}  >>`,
+          target: `${NEXT_PUBLIC_URL}/api/bracket`,
         },
         {
           label: 'GO BACK',
