@@ -8,10 +8,94 @@ import { PICK_ONCHAIN_CONTRACT_ADDR } from '../../config';
 import type { FrameTransactionResponse } from '@coinbase/onchainkit/frame';
 import { createPublicClient, http } from 'viem';
 
+function getColor(): string {
+  return "pink";
+}
+
 let getPicks = false;
 let currentPage = 'EAST';
 let picks: string[] = [];
 let currentTokenId = BigInt(0);
+const winners = [
+  // EAST - ROUND 1
+  'UConn',
+  'Northwestern',
+  'San Diego St.',
+  'Yale',
+  'Duquesne',
+  'Illinois',
+  'Washington St.',
+  'Iowa St.',
+  // WEST - ROUND 1
+  'North Carolina',
+  'Michigan St.',
+  'Grand Canyon.',
+  'Alabama',
+  'Clemson',
+  'Baylor',
+  'Dayton',
+  'Arizona',
+  // SOUTH - ROUND 1
+  'Houston',
+  'Texas AM',
+  'James Madison',
+  'Duke',
+  'NC State',
+  'Oakland',
+  'Colorado',
+  'Marquette',
+  // MIDWEST - ROUND 1
+  'Purdue',
+  'Utah St.',
+  'Gonzaga',
+  'Kansas',
+  'Oregon',
+  'Creighton',
+  'Texas',
+  'Tennessee',
+  // EAST - ROUND 2
+  'UConn',
+  'San Diego St.',
+  'Illinois',
+  'Iowa St.',
+  // WEST - ROUND 2
+  'North Carolina',
+  'Alabama',
+  'Clemson',
+  'Arizona',
+  // SOUTH - ROUND 2
+  'Houston',
+  'Duke',
+  'NC State',
+  'Marquette',
+  // MIDWEST - ROUND 2
+  'Purdue',
+  'Gonzaga',
+  'Creighton',
+  'Tennessee',
+  // EAST - ROUND 3
+  'UConn',
+  'Illinois',
+  // WEST - ROUND 3
+  'Alabama',
+  'Clemson',
+  // SOUTH - ROUND 3
+  'Duke',
+  'NC State',
+  // MIDWEST - ROUND 3
+  'Purdue',
+  'Tennessee',
+  // FINAL FOUR
+  'UConn',
+  'Alabama',
+  'NC State',
+  'Purdue',
+  // FINAL
+  '',
+  '',
+  // CHAMPION
+  ''
+];
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   const body: FrameRequest = await req.json();
@@ -160,26 +244,26 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <rect x="5" y="458" width="140" height="24" fill="lightgrey" stroke="black"/>
       <rect x="5" y="482" width="140" height="24" fill="lightgrey" stroke="black"/>
       <!-- Team Labels -->
-      <text x="10" y="57" font-family="Arial" font-size="16">Uconn</text>
+      <text x="10" y="57" font-family="Arial" font-size="16">UConn</text>
       <text x="10" y="81" font-family="Arial" font-size="16">Stetson</text>
       <text x="10" y="117" font-family="Arial" font-size="16">Florida Atlantic</text>
       <text x="10" y="141" font-family="Arial" font-size="16">Northwestern</text>
-      <text x="10" y="177" font-family="Arial" font-size="16">San Diego St</text>
+      <text x="10" y="177" font-family="Arial" font-size="16">San Diego St.</text>
       <text x="10" y="201" font-family="Arial" font-size="16">UAB</text>
       <text x="10" y="237" font-family="Arial" font-size="16">Auburn</text>
       <text x="10" y="261" font-family="Arial" font-size="16">Yale</text>
       <text x="10" y="297" font-family="Arial" font-size="16">BYU</text>
       <text x="10" y="321" font-family="Arial" font-size="16">Duquesne</text>
       <text x="10" y="357" font-family="Arial" font-size="16">Illinois</text>
-      <text x="10" y="381" font-family="Arial" font-size="16">Morehead St</text>
-      <text x="10" y="417" font-family="Arial" font-size="16">Washington St</text>
+      <text x="10" y="381" font-family="Arial" font-size="16">Morehead St.</text>
+      <text x="10" y="417" font-family="Arial" font-size="16">Washington St.</text>
       <text x="10" y="441" font-family="Arial" font-size="16">Drake</text>
-      <text x="10" y="477" font-family="Arial" font-size="16">Iowa St</text>
-      <text x="10" y="501" font-family="Arial" font-size="16">South Dakota St</text>
+      <text x="10" y="477" font-family="Arial" font-size="16">Iowa St.</text>
+      <text x="10" y="501" font-family="Arial" font-size="16">S. Dakota St.</text>
 
       <!-- ***** ROUND 2 ***** -->
       <!-- Rectangles -->
-      <rect x="210" y="68" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="210" y="68" width="140" height="24" fill="${getColor()}" stroke="black"/>
       <rect x="210" y="92" width="140" height="24" fill="lightgrey" stroke="black"/>
       <rect x="210" y="188" width="140" height="24" fill="lightgrey" stroke="black"/>
       <rect x="210" y="212" width="140" height="24" fill="lightgrey" stroke="black"/>
@@ -262,11 +346,11 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <rect x="5" y="482" width="140" height="24" fill="lightgrey" stroke="black"/>
       <!-- Team Labels -->
       <text x="10" y="57" font-family="Arial" font-size="16">North Carolina</text>
-      <text x="10" y="81" font-family="Arial" font-size="16">Wagner</text>
-      <text x="10" y="117" font-family="Arial" font-size="16">Mississippi St</text>
-      <text x="10" y="141" font-family="Arial" font-size="16">Michigan St</text>
-      <text x="10" y="177" font-family="Arial" font-size="16">Saint Mary's</text>
-      <text x="10" y="201" font-family="Arial" font-size="16">Grand Canyon</text>
+      <text x="10" y="81" font-family="Arial" font-size="16">Howard/Wagner</text>
+      <text x="10" y="117" font-family="Arial" font-size="16">Mississippi St.</text>
+      <text x="10" y="141" font-family="Arial" font-size="16">Michigan St.</text>
+      <text x="10" y="177" font-family="Arial" font-size="16">Saint Marys</text>
+      <text x="10" y="201" font-family="Arial" font-size="16">Grand Canyon.</text>
       <text x="10" y="237" font-family="Arial" font-size="16">Alabama</text>
       <text x="10" y="261" font-family="Arial" font-size="16">Charleston</text>
       <text x="10" y="297" font-family="Arial" font-size="16">Clemson</text>
@@ -276,7 +360,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <text x="10" y="417" font-family="Arial" font-size="16">Dayton</text>
       <text x="10" y="441" font-family="Arial" font-size="16">Nevada</text>
       <text x="10" y="477" font-family="Arial" font-size="16">Arizona</text>
-      <text x="10" y="501" font-family="Arial" font-size="16">Long Beach St</text>
+      <text x="10" y="501" font-family="Arial" font-size="16">Long Beach St.</text>
 
       <!-- ***** ROUND 2 ***** -->
       <!-- Rectangles -->
@@ -375,9 +459,9 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <text x="655" y="357" font-family="Arial" font-size="16">Kentucky</text>
       <text x="655" y="381" font-family="Arial" font-size="16">Oakland</text>
       <text x="655" y="417" font-family="Arial" font-size="16">Florida</text>
-      <text x="655" y="441" font-family="Arial" font-size="16">Boise St/Colorado</text>
+      <text x="655" y="441" font-family="Arial" font-size="16">Boise St./Colorado</text>
       <text x="655" y="477" font-family="Arial" font-size="16">Marquette</text>
-      <text x="655" y="501" font-family="Arial" font-size="16">Western Kentucky</text>
+      <text x="655" y="501" font-family="Arial" font-size="16">W. Kentucky</text>
 
       <!-- ***** ROUND 2 ***** -->
       <!-- Rectangles -->
@@ -464,21 +548,21 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <rect x="650" y="482" width="140" height="24" fill="lightgrey" stroke="black"/>
       <!-- Team Labels -->
       <text x="655" y="57" font-family="Arial" font-size="16">Purdue</text>
-      <text x="655" y="81" font-family="Arial" font-size="16">Grambling St</text>
-      <text x="655" y="117" font-family="Arial" font-size="16">Utah St</text>
+      <text x="655" y="81" font-family="Arial" font-size="16">Grambling St.</text>
+      <text x="655" y="117" font-family="Arial" font-size="16">Utah St.</text>
       <text x="655" y="141" font-family="Arial" font-size="16">TCU</text>
       <text x="655" y="177" font-family="Arial" font-size="16">Gonzaga</text>
       <text x="655" y="201" font-family="Arial" font-size="16">McNeese</text>
       <text x="655" y="237" font-family="Arial" font-size="16">Kansas</text>
       <text x="655" y="261" font-family="Arial" font-size="16">Samford</text>
-      <text x="655" y="297" font-family="Arial" font-size="16">South Carolina</text>
+      <text x="655" y="297" font-family="Arial" font-size="16">S. Carolina</text>
       <text x="655" y="321" font-family="Arial" font-size="16">Oregon</text>
       <text x="655" y="357" font-family="Arial" font-size="16">Creighton</text>
       <text x="655" y="381" font-family="Arial" font-size="16">Akron</text>
       <text x="655" y="417" font-family="Arial" font-size="16">Texas</text>
-      <text x="655" y="441" font-family="Arial" font-size="16">Colorado St</text>
+      <text x="655" y="441" font-family="Arial" font-size="16">Virgina/Colorado St.</text>
       <text x="655" y="477" font-family="Arial" font-size="16">Tennessee</text>
-      <text x="655" y="501" font-family="Arial" font-size="16">Saint Peter's</text>
+      <text x="655" y="501" font-family="Arial" font-size="16">Saint Peters</text>
 
       <!-- ***** ROUND 2 ***** -->
       <!-- Rectangles -->
