@@ -16,8 +16,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         text: 'Enter Token ID',
       },
       image: {
-        src: `${NEXT_PUBLIC_URL}/spaghetti.jpg`,
-        aspectRatio: '1:1',    
+        src: `${NEXT_PUBLIC_URL}/enter-token-id.png`,
+        //aspectRatio: '1:1',    
       },
       buttons: [
         {
