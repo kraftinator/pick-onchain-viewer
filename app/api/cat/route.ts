@@ -8,7 +8,20 @@ import { PICK_ONCHAIN_CONTRACT_ADDR } from '../../config';
 import type { FrameTransactionResponse } from '@coinbase/onchainkit/frame';
 import { createPublicClient, http } from 'viem';
 
-function getColor(): string {
+function isEliminated(pick: string): boolean {
+  return false;
+}
+
+function getColor(pick: string, index: number): string {
+  if (winners[index] === '') {
+    if (isEliminated(pick)) {
+      return "pink";
+    }
+    return "lightgrey";
+  }
+  if (winners[index] == pick) {
+    return "lightgreen";
+  }
   return "pink";
 }
 
@@ -263,14 +276,14 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
       <!-- ***** ROUND 2 ***** -->
       <!-- Rectangles -->
-      <rect x="210" y="68" width="140" height="24" fill="${getColor()}" stroke="black"/>
-      <rect x="210" y="92" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="210" y="188" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="210" y="212" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="210" y="308" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="210" y="332" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="210" y="428" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="210" y="452" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="210" y="68" width="140" height="24" fill="${getColor(picks[0], 0)}" stroke="black"/>
+      <rect x="210" y="92" width="140" height="24" fill="${getColor(picks[1], 1)}" stroke="black"/>
+      <rect x="210" y="188" width="140" height="24" fill="${getColor(picks[2], 2)}" stroke="black"/>
+      <rect x="210" y="212" width="140" height="24" fill="${getColor(picks[3], 3)}" stroke="black"/>
+      <rect x="210" y="308" width="140" height="24" fill="${getColor(picks[4], 4)}" stroke="black"/>
+      <rect x="210" y="332" width="140" height="24" fill="${getColor(picks[5], 5)}" stroke="black"/>
+      <rect x="210" y="428" width="140" height="24" fill="${getColor(picks[6], 6)}" stroke="black"/>
+      <rect x="210" y="452" width="140" height="24" fill="${getColor(picks[7], 7)}" stroke="black"/>
       <!-- Team Labels -->
       <text x="215" y="86" font-family="Arial" font-size="16">${picks[0]}</text>
       <text x="215" y="110" font-family="Arial" font-size="16">${picks[1]}</text>
