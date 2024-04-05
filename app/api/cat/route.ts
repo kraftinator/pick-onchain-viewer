@@ -130,7 +130,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     return new NextResponse('Message not valid', { status: 500 });
   }
   
-
   console.log('message', message);
   console.log('currentTokenId', currentTokenId);
   console.log('message.input', message.input);
@@ -139,7 +138,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   let tokenId = BigInt(1);
 
   if (typeof inputTokenId !== 'undefined') {
-    if (BigInt(inputTokenId) > 429) {
+    if (BigInt(inputTokenId) < 1 || BigInt(inputTokenId) > 429) {
       return new NextResponse('Token ID not valid', { status: 500 });
     }
   }
