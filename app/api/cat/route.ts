@@ -249,6 +249,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <!-- ********** EAST ********** -->
       <!-- Title -->
       <text x="650" y="66" font-family="Arial" font-size="46" fill="blue">EAST</text>
+      <text x="650" y="126" font-family="Arial" font-size="46" fill="blue">#${tokenId}</text>
 
       <!-- ***** ROUND 1 ***** -->
       <!-- Rectangles -->
