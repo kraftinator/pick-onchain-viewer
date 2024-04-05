@@ -126,9 +126,10 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   const body: FrameRequest = await req.json();
   const { isValid, message } = await getFrameMessage(body, { neynarApiKey: 'NEYNAR_ONCHAIN_KIT' });
 
-  if (isValid) {
+  if (!isValid) {
     return new NextResponse('Message not valid', { status: 500 });
   }
+  
 
   console.log('message', message);
   console.log('currentTokenId', currentTokenId);
@@ -136,6 +137,10 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   const inputTokenId = message.input;
   let tokenId = BigInt(1);
+
+  if (tokenId > 429) {
+    return new NextResponse('Token ID not valid', { status: 500 });
+  }
 
   if (typeof inputTokenId === 'undefined') {
     if (currentTokenId === BigInt(0)) {
