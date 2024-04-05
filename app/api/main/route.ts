@@ -13,11 +13,10 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   return new NextResponse(
     getFrameHtmlResponse({
       input: {
-        text: 'Enter Token ID',
+        text: 'Enter Token ID between 1 and 429',
       },
       image: {
         src: `${NEXT_PUBLIC_URL}/enter-token-id.png`,
-        //aspectRatio: '1:1',    
       },
       buttons: [
         {
