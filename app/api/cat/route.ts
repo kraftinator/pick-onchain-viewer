@@ -9,7 +9,18 @@ import type { FrameTransactionResponse } from '@coinbase/onchainkit/frame';
 import { createPublicClient, http } from 'viem';
 
 function isEliminated(pick: string): boolean {
-  return false;
+  // Final Four
+  if (pick === winners[56] && winners[60] === '') { return false; }
+  if (pick === winners[57] && winners[60] === '') { return false; }
+  if (pick === winners[58] && winners[61] === '') { return false; }
+  if (pick === winners[59] && winners[61] === '') { return false; }
+  // Championship
+  if (pick === winners[60] && winners[62] === '') { return false; }
+  if (pick === winners[61] && winners[62] === '') { return false; }
+  // Champion
+  if (pick === winners[62]) { return false; }
+
+  return true;
 }
 
 function getColor(pick: string, index: number): string {
