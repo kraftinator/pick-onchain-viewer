@@ -123,12 +123,14 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       args: [tokenId],
     });
 
+    const cleanedTeams = contractPicks.map(pick => pick.split('#')[0].trim());
+
     picks = contractPicks as string[];
     console.log('picks', picks);
     getPicks = true;
 
-    const cleanedTeams = picks.map(pick => pick.split('#')[0].trim());
-    console.log('cleanedTeams', cleanedTeams);
+    //const cleanedTeams = picks.map(pick => pick.split('#')[0].trim());
+    //console.log('cleanedTeams', cleanedTeams);
   }
   // END Get Picks
 
