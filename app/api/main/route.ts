@@ -21,7 +21,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       buttons: [
         {
           label: 'View Bracket',
-          target: `${NEXT_PUBLIC_URL}/api/cat`,
+          target: `${NEXT_PUBLIC_URL}/api/bracket`,
         },
       ]
     }),
