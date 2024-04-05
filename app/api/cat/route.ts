@@ -134,25 +134,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   console.log('currentTokenId', currentTokenId);
   console.log('message.input', message.input);
 
-  //if (currentPage === 'EAST' && currentTokenId !== BigInt(0)) {
-  //}
-  
-  /*
-  if (currentTokenId !== BigInt(0)) {
-    if (message?.button === 1) {
-      currentPage = 'EAST';
-    } else if (message?.button === 2) {
-      currentPage = 'WEST';
-    } else if (message?.button === 3) {
-      currentPage = 'SOUTH';
-    } else if (message?.button === 4) {
-      currentPage = 
-    }
-    }
-  }
-*/
-
-  //const inputTokenId = message.input || 1;
   const inputTokenId = message.input;
   let tokenId = BigInt(1);
 
@@ -166,13 +147,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     tokenId = BigInt(inputTokenId);
   }
 
-  //let tokenId: bigint = BigInt(inputTokenId);
-
-
-
   // Set currentPage
   if (currentTokenId !== BigInt(0)) {
-  //if (currentTokenId === tokenId) { 
     if (currentPage === 'EAST' && message?.button === 1) {
       currentPage = 'FINAL_FOUR';
     } else if (currentPage === 'EAST' && message?.button === 2) {
@@ -203,27 +179,17 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     currentPage = 'EAST';
   }
 
-  //const inputTokenId = message.input || 1;
-  //let tokenId: bigint = BigInt(inputTokenId);
-  //if (currentTokenId === BigInt(0)) {
-  //  currentTokenId = tokenId;
-  //} else {
-  //  tokenId = currentTokenId;
-  //}
-
   console.log('tokenId', tokenId);
   console.log('message?.button', message?.button);
   console.log('currentPage', currentPage);
 
   // Get picks
-  //let tokenId: bigint = 371n;
   if (!getPicks) {
     console.log('Loading picks from contract....')
     const publicClient = createPublicClient({
       chain: base,
       transport: http(),
     });
-
 
     const contractPicks = await publicClient.readContract({
       address: PICK_ONCHAIN_CONTRACT_ADDR,
@@ -233,14 +199,9 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     });
 
     const cleanedTeams = contractPicks.map(pick => pick.split('#')[0].trim());
-
-    //picks = contractPicks as string[];
     picks = cleanedTeams as string[];
     console.log('picks', picks);
     getPicks = true;
-
-    //const cleanedTeams = picks.map(pick => pick.split('#')[0].trim());
-    //console.log('cleanedTeams', cleanedTeams);
   }
   // END Get Picks
 
@@ -249,7 +210,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <!-- ********** EAST ********** -->
       <!-- Title -->
       <text x="650" y="66" font-family="Arial" font-size="46" fill="blue">EAST</text>
-      <text x="650" y="126" font-family="Arial" font-size="46" fill="blue">#${tokenId}</text>
+      <text x="650" y="126" font-family="Arial" font-size="36" fill="blue">#${tokenId}</text>
 
       <!-- ***** ROUND 1 ***** -->
       <!-- Rectangles -->
@@ -351,7 +312,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <!-- ********** WEST ********** -->
       <!-- Title -->
       <text x="650" y="66" font-family="Arial" font-size="46" fill="blue">WEST</text>
-      <text x="650" y="126" font-family="Arial" font-size="46" fill="blue">#${tokenId}</text>
+      <text x="650" y="126" font-family="Arial" font-size="36" fill="blue">#${tokenId}</text>
 
       <!-- ***** ROUND 1 ***** -->
       <!-- Rectangles -->
@@ -453,7 +414,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <!-- ********** SOUTH ********** -->
       <!-- Title -->
       <text x="5" y="66" font-family="Arial" font-size="46" fill="blue">SOUTH</text>
-      <text x="5" y="126" font-family="Arial" font-size="46" fill="blue">#${tokenId}</text>
+      <text x="5" y="126" font-family="Arial" font-size="36" fill="blue">#${tokenId}</text>
 
       <!-- ***** ROUND 1 ***** -->
       <!-- Rectangles -->
@@ -555,7 +516,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <!-- ********** MIDWEST ********** -->
       <!-- Title -->
       <text x="5" y="66" font-family="Arial" font-size="46" fill="blue">MIDWEST</text>
-      <text x="5" y="126" font-family="Arial" font-size="46" fill="blue">#${tokenId}</text>
+      <text x="5" y="126" font-family="Arial" font-size="36" fill="blue">#${tokenId}</text>
 
       <!-- ***** ROUND 1 ***** -->  
       <!-- Rectangles -->
@@ -656,7 +617,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     <svg viewBox='0 0 600 520' xmlns="http://www.w3.org/2000/svg">  <!-- ***** FINAL FOUR ***** -->
       <!-- Title -->
       <text x="250" y="66" font-family="Arial" font-size="46" fill="blue">FINAL FOUR</text>
-      <text x="250" y="126" font-family="Arial" font-size="46" fill="blue">#${tokenId}</text>
+      <text x="250" y="126" font-family="Arial" font-size="36" fill="blue">#${tokenId}</text>
       <!-- Rectangles -->
       <rect x="5" y="38" width="140" height="24" fill="${getColor(picks[56], 56)}" stroke="black"/>
       <rect x="5" y="62" width="140" height="24" fill="${getColor(picks[57], 57)}" stroke="black"/>
@@ -685,10 +646,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <text x="440" y="260" font-family="Arial" font-size="16">${picks[62]}</text>
     </svg>
   `
-
-  //const svgDataUrl: string = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(svgContent)))}`;
-  //console.log('svgDataUrl', svgDataUrl);
-
 
   // Define the dimensions based on the 1.91:1 aspect ratio
   let originalHeightSize = 550;
@@ -745,8 +702,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
      </svg>
    `;
 
-   const svgDataUrl: string = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(framedSvgString)))}`;
-
+  const svgDataUrl: string = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(framedSvgString)))}`;
 
   return new NextResponse(
     getFrameHtmlResponse({
@@ -765,41 +721,9 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       image: {
         src: svgDataUrl,
       },
-      //postUrl: `${NEXT_PUBLIC_URL}/api/cat`,
     }),
   );
 }
-
-/*
-async function getResponse(req: NextRequest): Promise<NextResponse> {
-  const body: FrameRequest = await req.json();
-
-  let tokenId: bigint = 371n;
-
-  const publicClient = createPublicClient({
-    chain: base,
-    transport: http(),
-  });
-
-  console.log('FLAG 1');
-
-  const picks = await publicClient.readContract({
-    address: PICK_ONCHAIN_CONTRACT_ADDR,
-    abi: PickOnchainABI,
-    functionName: 'ViewPickByTokenID',
-    args: [tokenId],
-  })// as Player[];
-
-  console.log('FLAG 2');
-  console.log('FLAG 3');
-  console.log('publicClient', publicClient);
-  console.log('picks', picks);
-  console.log('FLAG 4');
-
-  return NextResponse.json(picks);
-
-}
-*/
 
 export async function POST(req: NextRequest): Promise<Response> {
   return getResponse(req);

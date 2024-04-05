@@ -4,12 +4,12 @@ import { NEXT_PUBLIC_URL } from './config';
 
 const frameMetadata = getFrameMetadata({
   image: {
-    src: `${NEXT_PUBLIC_URL}/cat1.jpg`,
+    src: `${NEXT_PUBLIC_URL}/pick-onchain-main.jpg`,
     aspectRatio: '1:1',    
   },
   buttons: [
     {
-      label: 'START',
+      label: 'BEGIN',
       target: `${NEXT_PUBLIC_URL}/api/main`,
     },
   ]
