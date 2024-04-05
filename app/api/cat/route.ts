@@ -9,6 +9,7 @@ import type { FrameTransactionResponse } from '@coinbase/onchainkit/frame';
 import { createPublicClient, http } from 'viem';
 
 function isEliminated(pick: string): boolean {
+  console.log('isEliminated pick', pick);
   // Final Four
   if (pick === winners[56] && winners[60] === '') { return false; }
   if (pick === winners[57] && winners[60] === '') { return false; }
@@ -30,7 +31,7 @@ function getColor(pick: string, index: number): string {
     }
     return "lightgrey";
   }
-  if (winners[index] == pick) {
+  if (winners[index] === pick) {
     return "lightgreen";
   }
   return "pink";
