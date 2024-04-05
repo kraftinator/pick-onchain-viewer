@@ -423,8 +423,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
       <!-- ***** ROUND 4 ***** -->
       <!-- Rectangles -->
-      <rect x="630" y="248" width="140" height="24" fill="${getColor(picks[50], 51)}" stroke="black"/>
-      <rect x="630" y="272" width="140" height="24" fill="${getColor(picks[50], 51)}" stroke="black"/>
+      <rect x="630" y="248" width="140" height="24" fill="${getColor(picks[50], 50)}" stroke="black"/>
+      <rect x="630" y="272" width="140" height="24" fill="${getColor(picks[51], 51)}" stroke="black"/>
       <!-- Team Labels -->
       <text x="635" y="266" font-family="Arial" font-size="16">${picks[50]}</text>
       <text x="635" y="290" font-family="Arial" font-size="16">${picks[51]}</text>
@@ -478,14 +478,14 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
       <!-- ***** ROUND 2 ***** -->
       <!-- Rectangles -->
-      <rect x="435" y="68" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="435" y="92" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="435" y="188" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="435" y="212" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="435" y="308" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="435" y="332" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="435" y="428" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="435" y="452" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="435" y="68" width="140" height="24" fill="${getColor(picks[16], 16)}" stroke="black"/>
+      <rect x="435" y="92" width="140" height="24" fill="${getColor(picks[17], 17)}" stroke="black"/>
+      <rect x="435" y="188" width="140" height="24" fill="${getColor(picks[18], 18)}" stroke="black"/>
+      <rect x="435" y="212" width="140" height="24" fill="${getColor(picks[19], 19)}" stroke="black"/>
+      <rect x="435" y="308" width="140" height="24" fill="${getColor(picks[20], 20)}" stroke="black"/>
+      <rect x="435" y="332" width="140" height="24" fill="${getColor(picks[21], 21)}" stroke="black"/>
+      <rect x="435" y="428" width="140" height="24" fill="${getColor(picks[22], 22)}" stroke="black"/>
+      <rect x="435" y="452" width="140" height="24" fill="${getColor(picks[23], 23)}" stroke="black"/>
       <!-- Team Labels -->
       <text x="440" y="86" font-family="Arial" font-size="16">${picks[16]}</text>
       <text x="440" y="110" font-family="Arial" font-size="16">${picks[17]}</text>
@@ -507,10 +507,10 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
       <!-- ***** ROUND 3 ***** -->
       <!-- Rectangles -->
-      <rect x="220" y="130" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="220" y="154" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="220" y="370" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="220" y="394" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="220" y="130" width="140" height="24" fill="${getColor(picks[40], 40)}" stroke="black"/>
+      <rect x="220" y="154" width="140" height="24" fill="${getColor(picks[41], 41)}" stroke="black"/>
+      <rect x="220" y="370" width="140" height="24" fill="${getColor(picks[42], 42)}" stroke="black"/>
+      <rect x="220" y="394" width="140" height="24" fill="${getColor(picks[43], 43)}" stroke="black"/>
       <!-- Team Labels -->
       <text x="225" y="148" font-family="Arial" font-size="16">${picks[40]}</text>
       <text x="225" y="172" font-family="Arial" font-size="16">${picks[41]}</text>
@@ -524,8 +524,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       
       <!-- ***** ROUND 4 ***** -->
       <!-- Rectangles -->
-      <rect x="5" y="248" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="5" y="272" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="5" y="248" width="140" height="24" fill="${getColor(picks[52], 52)}" stroke="black"/>
+      <rect x="5" y="272" width="140" height="24" fill="${getColor(picks[53], 53)}" stroke="black"/>
       <!-- Team Labels -->
       <text x="10" y="266" font-family="Arial" font-size="16">${picks[52]}</text>
       <text x="10" y="290" font-family="Arial" font-size="16">${picks[53]}</text>
@@ -579,14 +579,14 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
       <!-- ***** ROUND 2 ***** -->
       <!-- Rectangles -->
-      <rect x="435" y="68" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="435" y="92" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="435" y="188" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="435" y="212" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="435" y="308" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="435" y="332" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="435" y="428" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="435" y="452" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="435" y="68" width="140" height="24" fill="${getColor(picks[24], 24)}" stroke="black"/>
+      <rect x="435" y="92" width="140" height="24" fill="${getColor(picks[25], 25)}" stroke="black"/>
+      <rect x="435" y="188" width="140" height="24" fill="${getColor(picks[26], 26)}" stroke="black"/>
+      <rect x="435" y="212" width="140" height="24" fill="${getColor(picks[27], 27)}" stroke="black"/>
+      <rect x="435" y="308" width="140" height="24" fill="${getColor(picks[28], 28)}" stroke="black"/>
+      <rect x="435" y="332" width="140" height="24" fill="${getColor(picks[29], 29)}" stroke="black"/>
+      <rect x="435" y="428" width="140" height="24" fill="${getColor(picks[30], 30)}" stroke="black"/>
+      <rect x="435" y="452" width="140" height="24" fill="${getColor(picks[31], 31)}" stroke="black"/>
       <!-- Team Labels -->
       <text x="440" y="86" font-family="Arial" font-size="16">${picks[24]}</text>
       <text x="440" y="110" font-family="Arial" font-size="16">${picks[25]}</text>
@@ -608,10 +608,10 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
       <!-- ***** ROUND 3 ***** -->
       <!-- Rectangles -->
-      <rect x="220" y="130" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="220" y="154" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="220" y="370" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="220" y="394" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="220" y="130" width="140" height="24" fill="${getColor(picks[44], 44)}" stroke="black"/>
+      <rect x="220" y="154" width="140" height="24" fill="${getColor(picks[45], 45)}" stroke="black"/>
+      <rect x="220" y="370" width="140" height="24" fill="${getColor(picks[46], 46)}" stroke="black"/>
+      <rect x="220" y="394" width="140" height="24" fill="${getColor(picks[47], 47)}" stroke="black"/>
       <!-- Team Labels -->
       <text x="225" y="148" font-family="Arial" font-size="16">${picks[44]}</text>
       <text x="225" y="172" font-family="Arial" font-size="16">${picks[45]}</text>
@@ -625,8 +625,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
       <!-- ***** ROUND 4 ***** -->
       <!-- Rectangles -->
-      <rect x="5" y="248" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="5" y="272" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="5" y="248" width="140" height="24" fill="${getColor(picks[54], 54)}" stroke="black"/>
+      <rect x="5" y="272" width="140" height="24" fill="${getColor(picks[55], 55)}" stroke="black"/>
       <!-- Team Labels -->
       <text x="10" y="266" font-family="Arial" font-size="16">${picks[54]}</text>
       <text x="10" y="290" font-family="Arial" font-size="16">${picks[55]}</text>
@@ -641,20 +641,20 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <!-- Title -->
       <text x="250" y="66" font-family="Arial" font-size="46" fill="blue">FINAL FOUR</text>
       <!-- Rectangles -->
-      <rect x="5" y="38" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="5" y="62" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="5" y="38" width="140" height="24" fill="${getColor(picks[56], 56)}" stroke="black"/>
+      <rect x="5" y="62" width="140" height="24" fill="${getColor(picks[57], 57)}" stroke="black"/>
       <!-- Team Labels -->
       <text x="10" y="56" font-family="Arial" font-size="16">${picks[56]}</text>
       <text x="10" y="80" font-family="Arial" font-size="16">${picks[57]}</text>
       <!-- Rectangles -->
-      <rect x="5" y="434" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="5" y="458" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="5" y="434" width="140" height="24" fill="${getColor(picks[58], 58)}" stroke="black"/>
+      <rect x="5" y="458" width="140" height="24" fill="${getColor(picks[59], 59)}" stroke="black"/>
       <!-- Team Labels -->
       <text x="10" y="452" font-family="Arial" font-size="16">${picks[58]}</text>
       <text x="10" y="476" font-family="Arial" font-size="16">${picks[59]}</text>
       <!-- Rectangles -->
-      <rect x="220" y="230" width="140" height="24" fill="lightgrey" stroke="black"/>
-      <rect x="220" y="254" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="220" y="230" width="140" height="24" fill="${getColor(picks[60], 60)}" stroke="black"/>
+      <rect x="220" y="254" width="140" height="24" fill="${getColor(picks[61], 61)}" stroke="black"/>
       <!-- Team Labels -->
       <text x="225" y="248" font-family="Arial" font-size="16">${picks[60]}</text>
       <text x="225" y="272" font-family="Arial" font-size="16">${picks[61]}</text>
@@ -664,7 +664,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       <!-- Lines -->
       <line x1="361" y1="254" x2="455" y2="254" stroke="black" stroke-width="2" />
       <!-- ********** WINNER ********** -->
-      <rect x="435" y="242" width="140" height="24" fill="lightgrey" stroke="black"/>
+      <rect x="435" y="242" width="140" height="24" fill="${getColor(picks[62], 62)}" stroke="black"/>
       <text x="440" y="260" font-family="Arial" font-size="16">${picks[62]}</text>
     </svg>
   `
