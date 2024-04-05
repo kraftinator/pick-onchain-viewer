@@ -125,7 +125,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
     const cleanedTeams = contractPicks.map(pick => pick.split('#')[0].trim());
 
-    picks = contractPicks as string[];
+    //picks = contractPicks as string[];
+    picks = cleanedTeams as string[];
     console.log('picks', picks);
     getPicks = true;
 
