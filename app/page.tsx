@@ -21,7 +21,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Bracket Viewer',
     description: 'An unofficial Bracket Viewer for the Polymarket Madness competion',
-    //images: [`${NEXT_PUBLIC_URL}/park-1.png`],
   },
   other: {
     ...frameMetadata,
