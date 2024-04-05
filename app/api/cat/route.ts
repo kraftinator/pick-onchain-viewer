@@ -126,6 +126,9 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     picks = contractPicks as string[];
     console.log('picks', picks);
     getPicks = true;
+
+    const cleanedTeams = picks.map(pick => pick.split('#')[0].trim());
+    console.log('cleanedTeams', cleanedTeams);
   }
   // END Get Picks
 
@@ -638,7 +641,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           label: `${nextPage}  >>`,
         },
         {
-          label: 'START OVER',
+          label: 'GO BACK',
           target: `${NEXT_PUBLIC_URL}/api/main`,
         },
       ],
