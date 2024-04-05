@@ -138,7 +138,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   const inputTokenId = message.input;
   let tokenId = BigInt(1);
 
-  if (tokenId > 429) {
+  if (tokenId > BigInt(429)) {
     return new NextResponse('Token ID not valid', { status: 500 });
   }
 
