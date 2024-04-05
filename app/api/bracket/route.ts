@@ -130,9 +130,9 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     return new NextResponse('Message not valid', { status: 500 });
   }
   
-  console.log('message', message);
-  console.log('currentTokenId', currentTokenId);
-  console.log('message.input', message.input);
+  //console.log('message', message);
+  //console.log('currentTokenId', currentTokenId);
+  //console.log('message.input', message.input);
 
   const inputTokenId = message.input;
   let tokenId = BigInt(1);
@@ -185,13 +185,13 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     currentPage = 'EAST';
   }
 
-  console.log('tokenId', tokenId);
-  console.log('message?.button', message?.button);
-  console.log('currentPage', currentPage);
+  //console.log('tokenId', tokenId);
+  //console.log('message?.button', message?.button);
+  //console.log('currentPage', currentPage);
 
   // Get picks
   if (!getPicks) {
-    console.log('Loading picks from contract....')
+    //console.log('Loading picks from contract....')
     const publicClient = createPublicClient({
       chain: base,
       transport: http(),
@@ -206,7 +206,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
     const cleanedTeams = contractPicks.map(pick => pick.split('#')[0].trim());
     picks = cleanedTeams as string[];
-    console.log('picks', picks);
+    //console.log('picks', picks);
     getPicks = true;
   }
   // END Get Picks
