@@ -117,7 +117,7 @@ const winners = [
   'Purdue',
   // FINAL
   '',
-  '',
+  'Purdue',
   // CHAMPION
   ''
 ];
