@@ -116,7 +116,7 @@ const winners = [
   'NC State',
   'Purdue',
   // FINAL
-  '',
+  'UConn',
   'Purdue',
   // CHAMPION
   ''
