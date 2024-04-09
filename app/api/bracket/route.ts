@@ -119,7 +119,7 @@ const winners = [
   'UConn',
   'Purdue',
   // CHAMPION
-  ''
+  'UConn'
 ];
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
